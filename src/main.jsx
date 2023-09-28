@@ -23,3 +23,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// ----------------------------------------
+// Ejercicio 3 - Trabajo práctico N° 2
+// ----------------------------------------
