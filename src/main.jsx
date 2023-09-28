@@ -3,8 +3,23 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// ----------------------------------------
+// Ejercicio 1 - Trabajo práctico N° 2
+// ----------------------------------------
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+// )
+
+// ----------------------------------------
+// Ejercicio 2 - Trabajo práctico N° 2
+// ----------------------------------------
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name="My friend" />
   </React.StrictMode>,
-)
+  document.getElementById('root')
+);
