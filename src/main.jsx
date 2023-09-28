@@ -17,11 +17,12 @@ import './index.css'
 // Ejercicio 2 - Trabajo práctico N° 2
 // ----------------------------------------
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <App name="My friend" />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // ----------------------------------------
