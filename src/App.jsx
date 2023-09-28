@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import './App.css'
 
-// ----------------------------------------
-// Ejercicio 1 - Trabajo práctico N° 2
-// ----------------------------------------
+
+// Trabajo práctico N° 2
+// ---------------------------
+// Ejercicio 1 
+// ---------------------------
 
 function App(){
   return(
@@ -16,9 +18,9 @@ function App(){
 
 export default App;
 
-// ----------------------------------------
-// Ejercicio 2 - Trabajo práctico N° 2
-// ----------------------------------------
+// ---------------------------
+// Ejercicio 2 
+// ---------------------------
 
 // function App(props){
 //   return(
@@ -30,9 +32,9 @@ export default App;
 
 // export default App;
 
-// ----------------------------------------
-// Ejercicio 3 - Trabajo práctico N° 2
-// ----------------------------------------
+// ---------------------------
+// Ejercicio 3
+// ---------------------------
 
 // class App extends Component {
 //   constructor() {
