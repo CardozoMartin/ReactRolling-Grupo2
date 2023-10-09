@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // import App from './App.jsx'
-import NewMessage from './App.jsx';
+// import NewMessage from './App.jsx';
+import TodoList from './App.jsx';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,15 +35,22 @@ import './index.css'
 // Ejercicio 3
 // ---------------------------
 
-  ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <NewMessage />
-   </React.StrictMode>
- );
+//   ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <NewMessage />
+//    </React.StrictMode>
+//  );
 
 // ---------------------------
 // Ejercicio 4
 // ---------------------------
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <TodoList />
+     </React.StrictMode>
+   );
+
 
 // ---------------------------
 // Ejercicio 5
