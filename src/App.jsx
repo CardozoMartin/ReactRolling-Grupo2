@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 // import React, { Component } from 'react';
 
 import './App.css'
@@ -41,13 +41,13 @@ const NewMessage = () => {
   const [message, setMessage] = useState('Hello my friend');
 
   const handleClick = () => {
-    setMessage(`${message} (from changed state)`);
+    setMessage(`${message} (from changed state)!`);
   };
 
   return (
-    <div>
-      <h1>{message}</h1>
-      <button onClick={handleClick}>Cambiar mensaje</button>
+    <div className='thirdExercise'>
+      <h1 className='text-light'>{message}</h1>
+      <button className='btn btn-secondary' onClick={handleClick}>Click me</button>
     </div>
   );
 }

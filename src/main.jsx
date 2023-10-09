@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // import App from './App.jsx'
+import NewMessage from './App.jsx';
 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.css'
 
 // Trabajo práctico N° 2
@@ -19,7 +23,6 @@ import './index.css'
 // ---------------------------
 // Ejercicio 2
 // ---------------------------
-
 
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //    <React.StrictMode>
