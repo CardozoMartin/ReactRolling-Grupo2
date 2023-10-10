@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 
 // import App from './App.jsx'
 // import NewMessage from './App.jsx';
-import TodoList from './App.jsx';
+// import TodoList from './App.jsx';
+import FormExsEight from './App.jsx';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -45,11 +46,11 @@ import './index.css'
 // Ejercicio 4
 // ---------------------------
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <TodoList />
-     </React.StrictMode>
-   );
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//     <React.StrictMode>
+//       <TodoList />
+//      </React.StrictMode>
+//    );
 
 
 // ---------------------------
@@ -60,6 +61,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // Ejercicio 6
 // ---------------------------
 
+// ReactDOM.createRoot(document.getElementById('root')).render(
+// <React.StrictMode>
+//   <App />
+//   </React.StrictMode>
+//   );
+
 // ---------------------------
 // Ejercicio 7
 // ---------------------------
@@ -67,6 +74,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // ---------------------------
 // Ejercicio 8
 // ---------------------------
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <FormExsEight />
+    </React.StrictMode>
+    );
 
 // ---------------------------
 // Ejercicio 9
