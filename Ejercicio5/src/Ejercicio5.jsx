@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import { List } from "./List";
+import { useRef, useState, useEffect } from "react"; // Importa useEffect desde React
 import { generateRandomId } from "./Generardor";
+import { List } from "./List";
 
-
-function App() {
-  const [list, setList] = useState([]);
+export const Ejercicio5 = () => {
+  const listLS = JSON.parse(localStorage.getItem("list")) || [];
+  const [list, setList] = useState(listLS);
 
   const tareaRef = useRef();
 
@@ -14,14 +14,17 @@ function App() {
     const tareaInput = tareaRef.current;
     const tareaText = tareaInput.value;
 
-    if (tareaText) {
-      setList((prevList) => [
-        ...prevList,
-        { id: generateRandomId(), text: tareaText },
-      ]);
-      tareaInput.value = "";
+    if (tareaText) { 
+      const listNew = { id: generateRandomId(), text: tareaText }; 
+      setList((items) => [...items, listNew]);
+
+      tareaRef.current.value = "";
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   return (
     <>
@@ -44,16 +47,14 @@ function App() {
             </button>
           </form>
           <div className="container pt-5">
-          <ul className="list-group ">
-            {list.map((item) => (
-              <List key={item.id} item={item} setList={setList} />
-            ))}
-          </ul>
+            <ul className="list-group">
+              {list.map((item) => (
+                <List key={item.id} item={item} setList={setList} />
+              ))}
+            </ul>
           </div>
         </article>
       </section>
     </>
   );
-}
-
-export default App;
+};
