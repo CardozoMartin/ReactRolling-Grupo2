@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { loadTasksFromLocalStorage, saveTasksToLocalStorage } from "../Ejercicio 5/Ejercicio5";
 
 // ---------------------------
 // Ejercicio 4: Crear una aplicación web que muestre una lista de tareas, al ingresar una tarea en el input y presionar enter.
@@ -7,6 +8,17 @@ import { useState } from "react";
 function TodoList() {
   const [task, setTask] = useState(''); // task = tarea actual 
   const [tasks, setTasks] = useState([]); // tasks = lista de tareas
+
+  useEffect(() => {
+    const storedTasks = loadTasksFromLocalStorage();
+    if (storedTasks.length > 0) {
+      setTasks(storedTasks);
+    }
+  }, []);
+  
+  useEffect(() => {
+    saveTasksToLocalStorage(tasks);
+  }, [tasks]);
 
   const handleChangeTask = (e) => {
     setTask(e.target.value);
@@ -49,5 +61,6 @@ function TodoList() {
     </section>
   );
 }
+
 
 export default TodoList;
