@@ -1,3 +1,3 @@
-export const generateRandomId = () => {
-    return self.crypto.randomUUID();
-  };
+export const createRandomId = () => {
+  return self.crypto.randomUUID();
+};

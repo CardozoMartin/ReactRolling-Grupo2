@@ -1,24 +1,15 @@
-import { useEffect, useState } from "react";
-import { loadTasksFromLocalStorage, saveTasksToLocalStorage } from "../Ejercicio 5/Ejercicio5";
+import { useState } from "react";
+
+import { createRandomId } from "../../Utils";
 
 // ---------------------------
 // Ejercicio 4: Crear una aplicación web que muestre una lista de tareas, al ingresar una tarea en el input y presionar enter.
 // ---------------------------
 
-function TodoList() {
+const TodoList = () => {
   const [task, setTask] = useState(''); // task = tarea actual 
   const [tasks, setTasks] = useState([]); // tasks = lista de tareas
 
-  useEffect(() => {
-    const storedTasks = loadTasksFromLocalStorage();
-    if (storedTasks.length > 0) {
-      setTasks(storedTasks);
-    }
-  }, []);
-  
-  useEffect(() => {
-    saveTasksToLocalStorage(tasks);
-  }, [tasks]);
 
   const handleChangeTask = (e) => {
     setTask(e.target.value);
@@ -30,8 +21,17 @@ function TodoList() {
 
     const uppercaseTask = task.charAt(0).toUpperCase() + task.slice(1);
 
-    setTasks([...tasks, uppercaseTask]);
+    const newTask = {
+      id: createRandomId(),
+      task: uppercaseTask,
+    };
+
+    setTasks([...tasks, newTask]);
     setTask('');
+  };
+
+  const handleDelete = (id) => {
+    setTasks((state) => state.filter((task) => task.id !== id));
   };
 
   return (
@@ -45,22 +45,24 @@ function TodoList() {
         <input
           type="text"
           id="list-input"
-          placeholder="Tarea 1..."
+          placeholder="Tarea..."
           className="mb-3 form-control"
           value={task}
           onChange={handleChangeTask}
         />
       </form>
       <hr />
-      <ul className="todoListForth">
-        {tasks.map((task, index) => (
-          <li key={index}> - {task}</li>
-        ))}
-      </ul>
+      <ul className="todoListForth list-group">
+          {tasks.length === 0 && <p className='text-center'>No existen tareas aún 💔</p>}
+          {tasks.map((task) => (
+            <li className="list-group-item d-flex align-items-center justify-content-between" key={task.id}> - {task.task}
+            <button className="btn btn-secondary rounded ms-3" onClick={() => handleDelete(task.id)}>x</button>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 }
-
 
 export default TodoList;
