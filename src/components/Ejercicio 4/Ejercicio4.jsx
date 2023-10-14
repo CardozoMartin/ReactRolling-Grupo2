@@ -1,52 +1,48 @@
-import { useRef, useState } from "react";
-
-import { generateRandomId } from "../../Utils";
+import { useState } from "react";
 
 // ---------------------------
 // Ejercicio 4: Crear una aplicación web que muestre una lista de tareas, al ingresar una tarea en el input y presionar enter.
 // ---------------------------
 
+function TodoList() {
+  const [task, setTask] = useState(''); // task = tarea actual 
+  const [tasks, setTasks] = useState([]); // tasks = lista de tareas
 
-const TodoList = () => {
-  const [tasks, setTasks] = useState([]);
-
-  const taskRef = useRef();
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-  const taskText = taskInput.value;
-  const taskInput = taskRef.current;
-
-    if (taskText) {
-      setTasks((prevList) => [
-        ...prevList,
-        { id:generateRandomId(), text:taskText },
-      ]);
-      taskInput.value = "";
-    }
+  const handleChangeTask = (e) => {
+    setTask(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (task.trim() === '') return;
+
+    const uppercaseTask = task.charAt(0).toUpperCase() + task.slice(1);
+
+    setTasks([...tasks, uppercaseTask]);
+    setTask('');
+  };
 
   return (
-    <section className='forthExercise text-light'>
-      <h1>Bienvenidx 😛</h1>
-      <h2 className='mb-3'>Ingresa tus tareas</h2>
+    <section className="forthExercise text-light">
+      <div className="divForth">
+      <h1>Bienvenidx 😛💜</h1>
       <form onSubmit={handleSubmit}>
-        <fieldset>
-      <input
-        type="text"
-        placeholder="Tarea 1..."
-        className='list-group-item d-flex align-items-center justify-content-between mt-3'
-        ref={taskRef}
-      />
-      </fieldset>
-      <button type='submit' className='btn btn-secondary mt-5'>Crear tarea</button>
+      <label htmlFor="list-input" className="form-label">
+        Ingresa tus tareas
+        </label>
+        <input
+          type="text"
+          id="list-input"
+          placeholder="Tarea 1..."
+          className="mb-3 form-control"
+          value={task}
+          onChange={handleChangeTask}
+        />
       </form>
-      <div className='text-light'>
-      <ul className='list-group'>
-        {tasks.map((item) => (
-          <TodoList key={item.id} task={item} setTasks={setTasks} />
+      <hr />
+      <ul className="todoListForth">
+        {tasks.map((task, index) => (
+          <li key={index}> - {task}</li>
         ))}
       </ul>
       </div>

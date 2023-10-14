@@ -1,3 +1,7 @@
+body{
+    background-color: #272727;
+}
+
 .thirdExercise {
     display: flex;
     flex-direction: column;
@@ -13,6 +17,17 @@
     align-items: center;
     height: 100vh;
   }
+
+  .divForth{
+    background-color: rgb(100, 25, 122);
+    padding: 50px;
+  }
+
+  .todoListForth{
+  list-style: none;
+  padding: 0;
+  }
+  
 
   .sixthExercise {
     display: flex;
