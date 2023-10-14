@@ -1,86 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// import App from './App.jsx'
-// import NewMessage from './App.jsx';
-// import TodoList from './App.jsx';
-import FormExsEight from './App.jsx';
+// import App1 from './components/Ejercicio 1/Ejercicio1.jsx';
+// import App2 from './components/Ejercicio 2/Ejercicio2.jsx';
+// import NewMessage from './components/Ejercicio 3/Ejercicio3.jsx';
+// import TodoList from './components/Ejercicio 4/Ejercicio4.jsx';
+// import App6 from './components/Ejercicio 6/Ejercicio6';
+// import FormExsEight from './components/Ejercicio 8/Ejercicio8';
+// import Appointment from './components/Ejercicio 9/Ejercicio9';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.css'
 
-// Trabajo práctico N° 2
-// ---------------------------
-// Ejercicio 1
-// ---------------------------
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//   <App name="world" />
-// </React.StrictMode>
-// );
-
-// ---------------------------
-// Ejercicio 2
-// ---------------------------
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//    <React.StrictMode>
-//     <App name="My friend" />
-//     </React.StrictMode>
-//   );
-
-// ---------------------------
-// Ejercicio 3
-// ---------------------------
-
-//   ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <NewMessage />
-//    </React.StrictMode>
-//  );
-
-// ---------------------------
-// Ejercicio 4
-// ---------------------------
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//     <React.StrictMode>
-//       <TodoList />
-//      </React.StrictMode>
-//    );
-
-
-// ---------------------------
-// Ejercicio 5
-// ---------------------------
-
-// ---------------------------
-// Ejercicio 6
-// ---------------------------
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-// <React.StrictMode>
-//   <App />
-//   </React.StrictMode>
-//   );
-
-// ---------------------------
-// Ejercicio 7
-// ---------------------------
-
-// ---------------------------
-// Ejercicio 8
-// ---------------------------
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <FormExsEight />
-    </React.StrictMode>
-    );
-
-// ---------------------------
-// Ejercicio 9
-// ---------------------------
+  {/* <App1 name="world" /> */}
+  {/* <App2 name="My friend" /> */}
+  {/* <NewMessage /> */}
+  {/* <TodoList /> */}
+  {/* Ejercicio5 */}
+  {/* <App6 /> */}
+  {/* Ejercicio7 */}
+  {/* <FormExsEight /> */}
+  {/* <Appointment /> */}
+  {/* Ejercicio10 */}
+  {/* Ejercicio11 */}
+  {/* Ejercicio12 */}
+  {/* Ejercicio13 */}
+  {/* Ejercicio14 */}
+</React.StrictMode>
+);
