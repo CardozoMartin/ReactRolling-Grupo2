@@ -11,3 +11,27 @@
     border: 1px solid #a8a8a8;
     border-radius: 0.5rem;
   }
+
+  .btn-guardar{
+        background-color: #628ccc;
+        color: #f9f9f9;
+        border-radius: 0.5rem;
+        padding: 6px;
+    
+        &:hover{
+            background-color: #3a557c;;
+            color: #000000;
+        }
+  }
+
+  .btn-eliminar{
+        background-color: #e06615;
+        color: #f9f9f9;
+        border-radius: 0.5rem;
+        padding: 6px;
+    
+        &:hover{
+            background-color: #80390a;;
+            color: #000000;
+        }
+  }
