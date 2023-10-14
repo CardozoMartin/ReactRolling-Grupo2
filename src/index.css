@@ -33,7 +33,6 @@ body{
   padding: 0;
   }
 
-
   .sixthExercise {
     display: flex;
     flex-direction: column;
@@ -53,7 +52,7 @@ body{
 }
 
 .btnData{
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(241, 199, 81);
 }
 
 .formEighth{
@@ -61,4 +60,13 @@ body{
     max-width: 1000px;
     background-color: rgb(189, 124, 189);
     padding: 50px;
+}
+
+.employee-avatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
 }

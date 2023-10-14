@@ -1,52 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import ColorForm from "./ColorForm"
+import ColorList from "./ColorList"
 
 // ---------------------------
 // Ejercicio 6: Crear un proyecto de react que muestre un formulario con un input y un button que permite guardar un color en el localstorage.
 // ---------------------------
 
 
-const App6 = () => {
-  const [color, setColor] = useState('');
-  const [savedColors, setSavedColors] = useState(
-    JSON.parse(localStorage.getItem('colors')) || []
-  );
+const Ejercicio6 = () => {
 
-  const handleColorChange = (e) => {
-    setColor(e.target.value);
-  };
+  const [colors, setColors] = useState([]);
 
-  const handleSaveColor = () => {
-    if (color.trim() === '') {
-      alert('Ingrese un color válido.');
-      return;
-    }
-
-    const updatedColors = [...savedColors, color];
-    localStorage.setItem('colors', JSON.stringify(updatedColors));
-    setSavedColors(updatedColors);
-    setColor('');
-  };
+  useEffect(() => {
+    localStorage.setItem('colors', JSON.stringify(colors));
+  }, [colors]);
 
   return (
-    <section className="sixthExercise container">
-      <div className='sixthSection'>
-      <h1>Administrar colores</h1>
-        <input
-          type="color"
-          className='color-picker'
-          value={color}
-          onChange={handleColorChange}
-        />
-        <button className='btn btn-secondary' onClick={handleSaveColor}>Guardar</button>
-        <h2 >Colores guardados:</h2>
-        <ul>
-          {savedColors.map((savedColor, index) => (
-            <li key={index}>{savedColor}</li>
-            ))}
-        </ul>
-      </div>
+    <section className="container my-4">
+    <ColorForm setColors={setColors} />
+    <ColorList colors={colors} />
     </section>
-  );
-}
+    );
+};
 
-export default App6;
+export default Ejercicio6;

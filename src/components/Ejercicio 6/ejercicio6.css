@@ -1,0 +1,13 @@
+.color-picker{
+    width: 150px;
+    height: 150px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .color-text{
+    padding: 0.5rem 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #a8a8a8;
+    border-radius: 0.5rem;
+  }
