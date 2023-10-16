@@ -11,7 +11,7 @@ const colorsLS = JSON.parse(localStorage.getItem('colors')) || [];
 
 const Ejercicio6 = () => {
 
-  const [colors, setColors] = useState([colorsLS]);
+  const [colors, setColors] = useState(colorsLS);
 
   useEffect(() => {
     localStorage.setItem('colors', JSON.stringify(colors));

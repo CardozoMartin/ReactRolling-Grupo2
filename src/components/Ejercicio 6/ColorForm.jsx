@@ -23,7 +23,7 @@ const ColorForm = (props) => {
     }
     setColors((prev) => [...prev, newColor]);
 
-    setColor('#000000')
+    setColor('#000000');
   };
 
   return (

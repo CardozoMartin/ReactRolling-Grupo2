@@ -3,6 +3,7 @@
     height: 150px;
     border-radius: 1rem;
     overflow: hidden;
+    padding: 0;
   }
   
   .color-text{
