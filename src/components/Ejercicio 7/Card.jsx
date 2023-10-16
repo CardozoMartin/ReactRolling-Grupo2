@@ -1,27 +1,26 @@
 import { generateRandomAvatar } from "../../Utils";
 
 const EmployeeCard = (props) => {
-    const { employee } = props;
+  const { employee } = props;
+  const randomAvatarUrl = generateRandomAvatar();
   
-    const randomAvatarUrl = generateRandomAvatar()
-  
-    return (
-      <li className='list-group-item d-flex align-items-center'>
-        <img
-          src={randomAvatarUrl}
-          alt={employee.fullName}
-          className='employee-avatar'
-        />
-        <div>
-          <h3 className='mb-2'>{employee.fullName}</h3>
-          <div className='d-flex gap-2 align-items-center'>
-            <h6 className='mb-0'>{employee.title}</h6>
-            <p className='bg-info mb-0 px-2 rounded text-light'>
-              {employee.department}
-            </p>
+  return (
+  <li className='list-group-item container list-employees'>
+    <img
+    alt={employee.fullName}
+    src={randomAvatarUrl}
+    className='avatar'/>
+    <article>
+      <h2 className='ms-4'>{employee.fullName}</h2>
+      <div className='d-flex align-items-center'>
+        <h6 className='mb-0 ms-5 fw-bold'>{employee.title}</h6>
+        <p className='bg-employee mb-0 rounded text-light ms-3'>
+          {employee.department}
+          </p>
           </div>
-        </div>
-      </li>
+          </article>
+          </li>
     );
   };
+
   export default EmployeeCard;

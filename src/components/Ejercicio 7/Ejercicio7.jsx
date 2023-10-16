@@ -6,79 +6,85 @@ import EmployeeCard from "./Card";
 // ---------------------------
 
 
-const employees = [
-    {
-      id: 1,
-      fullName: 'Laya Dueñas',
-      title: 'CEO',
-      department: 'Business',
-      pic: 'empleado01.png',
-    },
-    {
-      id: 2,
-      fullName: 'Astryd Vallés',
-      title: 'CMO',
-      department: 'Marketing',
-      pic: 'empleado02.png',
-    },
-    {
-      id: 3,
-      fullName: 'Shantell Meza',
-      title: 'CFO',
-      department: 'Business',
-      pic: 'empleado03.png',
-    },
-    {
-      id: 4,
-      fullName: 'Sergio Ocampo',
-      title: 'CTO',
-      department: 'Engineering',
-      pic: 'empleado04.png',
-    },
-    {
-      id: 5,
-      fullName: 'Ares Jiménez',
-      title: 'Art Director',
-      department: 'Marketing',
-      pic: 'empleado05.png',
-    },
-    {
-      id: 6,
-      fullName: 'Marta Pérez',
-      title: 'Frontend Dev',
-      department: 'Engineering',
-      pic: 'empleado06.png',
-    },
-    {
-      id: 7,
-      fullName: 'Ellen Balderas',
-      title: 'Digital Strategist',
-      department: 'Marketing',
-      pic: 'empleado07.png',
-    },
-    {
-      id: 8,
-      fullName: 'Cynthia Valentín',
-      title: 'Backend Dev',
-      department: 'Engineering',
-      pic: 'empleado08.png',
-    },
-    {
-      id: 9,
-      fullName: 'Bernard Jung',
-      title: 'DevOps Engineer',
-      department: 'Engineering',
-      pic: 'empleado09.png',
-    },
-  ];
+let employees = [
+  {
+    id: 1,
+    fullName: 'Bianca Deblinger',
+    title: 'CEO',
+    department: 'Engineering',
+    photo: 'empleado01.png',
+  },
+  {
+    id: 2,
+    fullName: 'Martín Cardozo',
+    title: 'Frontend Dev',
+    department: 'Marketing',
+    photo: 'empleado02.png',
+  },
+  {
+    id: 3,
+    fullName: 'Gabriel Azubel',
+    title: 'CFO',
+    department: 'Business',
+    photo: 'empleado03.png',
+  },
+  {
+    id: 4,
+    fullName: 'Ezequiel Amin',
+    title: 'Art director',
+    department: 'Business',
+    photo: 'empleado04.png',
+  },
+  {
+    id: 5,
+    fullName: 'Belén Segovia',
+    title: 'CTO',
+    department: 'Marketing',
+    photo: 'empleado05.png',
+  },
+  {
+    id: 6,
+    fullName: 'Mauricio Zurita',
+    title: 'CMO',
+    department: 'Engineering',
+    photo: 'empleado06.png',
+  },
+  {
+    id: 7,
+    fullName: 'Mariana Juarez',
+    title: 'Digital Strategist',
+    department: 'Marketing',
+    photo: 'empleado07.png',
+  },
+  {
+    id: 8,
+    fullName: 'Ivan Zanel',
+    title: 'Backend Dev',
+    department: 'Engineering',
+    photo: 'empleado08.png',
+  },
+  {
+    id: 9,
+    fullName: 'Enzo Iñigo',
+    title: 'Backend Dev',
+    department: 'Engineering',
+    photo: 'empleado09.png',
+  },
+  {
+    id: 10,
+    fullName: 'Mauricio Gunsett',
+    title: 'Frontend Dev',
+    department: 'Engineering',
+    photo: 'empleado10.png',
+  },
+];
   
   const App7 = () => {
     return (
-      <ul className='list-group w-50'>
-        {employees.map((employee) => (
-          <EmployeeCard key={employee.id} employee={employee} />
-        ))}
-      </ul>
+    <ul className='list-group container'>{employees.map((employee) => (
+    <EmployeeCard key={employee.id} employee={employee} />
+    ))}</ul>
     );
   };
+
   export default App7;

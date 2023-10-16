@@ -3,30 +3,30 @@ body{
 }
 
 .thirdExercise {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
   .forthExercise{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
   .divForth{
-    background-color: rgb(100, 25, 122);
-    padding: 50px;
-  }
+  background-color: rgb(100, 25, 122);
+  padding: 50px;
+}
 
   .divFifth{
-    background-color: rgb(47, 145, 124);
-    padding: 50px;
-  }
+  background-color: rgb(47, 145, 124);
+  padding: 50px;
+}
 
   .todoListForth{
   list-style: none;
@@ -34,39 +34,50 @@ body{
   }
 
   .sixthExercise {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
   .sixthSection{
-    background-color: #f9f9f9;
-    padding: 50px;
-  }
+  background-color: #f9f9f9;
+  padding: 50px;
+}
 
 .eighthSection{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btnData{
-    background-color: rgb(241, 199, 81);
+  background-color: rgb(241, 199, 81);
 }
 
 .formEighth{
-    margin-top: 200px;
-    max-width: 1000px;
-    background-color: rgb(189, 124, 189);
-    padding: 50px;
+  margin-top: 200px;
+  max-width: 1000px;
+  background-color: rgb(189, 124, 189);
+  padding: 50px;
 }
 
-.employee-avatar{
+.list-employees{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 15vh;
+  width: 30vw;
+}
+
+.avatar{
   width: 75px;
   height: 75px;
   border-radius: 100%;
+  background-color: rgb(120, 120, 230);
+}
+
+.bg-employee{
+  background-color: rgb(120, 120, 230);
+  padding: 3px;
 }
