@@ -22,27 +22,45 @@ const AppointmentForm = () => {
       appointment: data,
       };
       setAppointment([...appointment, newAppointmentData]);
+      localStorage.setItem('appointment', JSON.stringify([...appointment, newAppointmentData]));
       reset();
     };
 
-    // const handleChange = (e) => {
-    // setAppointment(e.target.value);
-    // };
+    const deleteAppointment = (id) => {
+      const updatedAppointments = appointment.filter((apt) => apt.id !== id);
+      setAppointment(updatedAppointments);
+      localStorage.setItem('appointment', JSON.stringify(updatedAppointments));
+    };
 
-    // Cargar datos desde el localStorage al cargar el componente
+    const isValidOwnerName = (value) => {
+      // Dividir el valor en palabras
+      const words = value.split(' ');
+    
+      // Verificar que haya al menos 2 palabras y que cada palabra tenga al menos 2 caracteres
+      if (words.length < 2 || !words.filter((word) => word.length >= 2)) {
+        return 'Please enter a valid full name.';
+      }
+    
+      // Verificar que no haya espacios en blanco sin sentido
+      if (words.some((word) => word.trim() === '')) {
+        return 'Please avoid meaningless spaces in the name.';
+      }
+    
+      return true;
+    };
+
     useEffect(() => {
     const dataFromLS = JSON.parse(localStorage.getItem('appointment')) || [];
     setAppointment(dataFromLS);
   }, []);
 
-  // Guardar en localStorage cuando el formulario cambie
     useEffect(() => {
     localStorage.setItem('appointment', JSON.stringify(appointment));
   }, [appointment]);
     
     return (
       <>
-        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)}>
+        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)} noValidate>
         <div className='card-header fw-bold text-center'>🐱🐶🐵 ROLLING VET 🐭🐹🦝</div>
         <p className='text-center mt-2'>Fill out the form to create an appointment</p>
           <fieldset className='px-3'>
@@ -83,9 +101,10 @@ const AppointmentForm = () => {
                   message: 'This field has a minimum of 3 characters.',
                 },
                 maxLength: {
-                  value: 15,
-                  message: 'This field has a maximum of 15 characters.',
+                  value: 20,
+                  message: 'This field has a maximum of 20 characters.',
                 },
+                validate: isValidOwnerName,
               })}
               required
             />
@@ -193,6 +212,7 @@ const AppointmentForm = () => {
         <hr />
       <section className="container w-50">
       <article className="row">
+        {appointment.length === 0 && <p className='text-center card p-3'>There are no scheduled appointments.</p>}
         {appointment.map((appointment) => (
           <div className="col-6" key={appointment.id}>
             <div className="card mb-3">
@@ -218,7 +238,7 @@ const AppointmentForm = () => {
                   - Symptoms: {appointment.appointment.symptoms}
                 </p>
                 <div className='text-end'>
-                <button type="button" className="btn-delete-ninth">Delete</button>
+                <button type="button" className="btn-delete-ninth" onClick={() => deleteAppointment(appointment.id)}>Delete</button>
                 </div>
               </div>
             </div>
