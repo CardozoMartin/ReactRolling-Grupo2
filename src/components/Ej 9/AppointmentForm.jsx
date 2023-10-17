@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { createRandomId } from '../../Utils';
+
 // ---------------------------
 // Ejercicio 9: Crear una aplicación web que permite cargar un formulario para registrar una cita
 // en una veterinaria, todos los datos solicitados en el formulario deben ser
@@ -9,22 +11,31 @@ import { useForm } from 'react-hook-form';
 // localstorage.
 // ---------------------------
 
-const appointmentsLS = JSON.parse(localStorage.getItem('appointment')) || [];
-
-
 const AppointmentForm = () => {
-    const [appointment, setAppointment] = useState(appointmentsLS);
-    const {register, handleSubmit, formState: { errors }, reset} = useForm();
+  const {register, handleSubmit, formState: { errors }, reset} = useForm();
+  const [appointment, setAppointment] = useState([]);
+  const [formData, setFormData] = useState({});
     
     const newAppointment = (data) => {
-    console.log(data);
-    reset();
+      const newAppointmentData = {
+      id: createRandomId(0,6000),
+      appointment: data,
+      };
+      setAppointment([...appointment, newAppointmentData]);
+      reset();
     };
 
-    const handleChange = (e) => {
-    setAppointment(e.target.value);
-    };
+    // const handleChange = (e) => {
+    // setAppointment(e.target.value);
+    // };
 
+    // Cargar datos desde el localStorage al cargar el componente
+    useEffect(() => {
+    const dataFromLS = JSON.parse(localStorage.getItem('appointment')) || [];
+    setAppointment(dataFromLS);
+  }, []);
+
+  // Guardar en localStorage cuando el formulario cambie
     useEffect(() => {
     localStorage.setItem('appointment', JSON.stringify(appointment));
   }, [appointment]);
@@ -177,19 +188,27 @@ const AppointmentForm = () => {
             <p className='text-danger'>{errors.symptoms?.message}</p>
           </fieldset>
           <div className='text-end px-3'>
-            <button type='submit' className='mt-3 mb-3 btn-schedule' onChange={handleChange}>Schedule</button></div>
+            <button type='submit' className='mt-3 mb-3 btn-schedule'>Schedule</button></div>
         </form>
         <hr />
-        <ul className="listNinth list-group">
-          {appointment.length === 0 && <p className='text-center'>There is no appointment yet.</p>}
-          {appointment.map((appointment) => (
-            <li className="list-group-item d-flex align-items-center justify-content-between" key={appointment.id}> - {appointment.appointment}
-            <button className="btn btn-warning rounded ms-3">x</button>
-            </li>
+        <ul className="listNinth list-group container card">
+        {appointment.length === 0 && <p className='text-center'>There is no appointment yet.</p>}
+        {appointment.map((appointment) => (
+        <li className="list-group-item d-flex align-items-center justify-content-between" key={appointment.id}>
+          - Pets Name: {appointment.appointment.name}
+          - Owner: {appointment.appointment.owner}
+          - Phone: {appointment.appointment.phone}
+          - Date: {appointment.appointment.date}
+          - Time: {appointment.appointment.time}
+          - Pet Sex: {appointment.appointment.sex}
+          - Pet Age: {appointment.appointment.age}
+          - Symptoms: {appointment.appointment.symptoms}
+          <button className="btn btn-warning rounded ms-3">x</button>
+          </li>
           ))}
-        </ul>
-      </>
-    );
-  };
+          </ul>
+          </>
+          );
+        };
   
   export default AppointmentForm;
