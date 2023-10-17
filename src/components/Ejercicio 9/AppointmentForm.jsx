@@ -22,14 +22,14 @@ const AppointmentForm = () => {
       appointment: data,
       };
       setAppointment([...appointment, newAppointmentData]);
-      localStorage.setItem('appointment', JSON.stringify([...appointment, newAppointmentData]));
+      localStorage.setItem('appointments', JSON.stringify([...appointment, newAppointmentData]));
       reset();
     };
 
     const deleteAppointment = (id) => {
       const updatedAppointments = appointment.filter((apt) => apt.id !== id);
       setAppointment(updatedAppointments);
-      localStorage.setItem('appointment', JSON.stringify(updatedAppointments));
+      localStorage.setItem('appointments', JSON.stringify(updatedAppointments));
     };
 
     const isValidOwnerName = (value) => {
