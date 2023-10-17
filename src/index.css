@@ -68,6 +68,7 @@ body{
   align-items: center;
   height: 15vh;
   width: 30vw;
+  margin-top: 50px;
 }
 
 .avatar{
@@ -80,4 +81,24 @@ body{
 .bg-employee{
   background-color: rgb(120, 120, 230);
   padding: 3px;
+}
+
+.ninth-form{
+  display: flex;
+  justify-content: center;
+  width: 40vw;
+  margin-top: 50px;
+}
+
+.btn-schedule{
+  background-color: #5cd6a3;
+  color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 5px;
+  width: 8vw;
+  
+  &:hover{
+    background-color: #3d916e;
+    color: #000000;
+  }
 }
