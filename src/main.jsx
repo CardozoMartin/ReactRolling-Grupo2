@@ -9,8 +9,7 @@ import ReactDOM from 'react-dom/client'
 // import Ejercicio6 from './components/Ejercicio 6/Ejercicio6';
 // import App7 from './components/Ejercicio 7/Ejercicio7';
 // import FormExsEight from './components/Ejercicio 8/Ejercicio8';
-// import App9 from './components/Ejercicio 9/Ejercicio9';
-import AppointmentForm from './components/Ej 9/AppointmentForm';
+import AppointmentForm from './components/Ejercicio 9/AppointmentForm';
 // import Ejercicio11 from './components/Ejercicio 11/Ejercicio11';
 // import ClimaApp from './components/Ejercicio 13/Ejercicio13';
 

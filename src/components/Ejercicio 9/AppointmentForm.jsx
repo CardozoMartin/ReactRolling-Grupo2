@@ -192,18 +192,22 @@ const AppointmentForm = () => {
         </form>
         <hr />
         <ul className="listNinth list-group container card">
-        {appointment.length === 0 && <p className='text-center'>There is no appointment yet.</p>}
+        {appointment.length === 0 && <p className='text-center mt-2'>There is no appointment yet.</p>}
+        <div className='card-header fw-bold text-center'></div>
         {appointment.map((appointment) => (
         <li className="list-group-item d-flex align-items-center justify-content-between" key={appointment.id}>
           - Pets Name: {appointment.appointment.name}
           - Owner: {appointment.appointment.owner}
           - Phone: {appointment.appointment.phone}
+          <div className='card-body'>
           - Date: {appointment.appointment.date}
           - Time: {appointment.appointment.time}
           - Pet Sex: {appointment.appointment.sex}
           - Pet Age: {appointment.appointment.age}
           - Symptoms: {appointment.appointment.symptoms}
-          <button className="btn btn-warning rounded ms-3">x</button>
+          </div>
+          <div className="card-footer text-body-secondary text-end">
+          <button className="btn btn-warning rounded ms-3">x</button></div>
           </li>
           ))}
           </ul>
