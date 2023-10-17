@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 // ---------------------------
@@ -8,19 +9,26 @@ import { useForm } from 'react-hook-form';
 // localstorage.
 // ---------------------------
 
+const appointmentsLS = JSON.parse(localStorage.getItem('appointment')) || [];
+
+
 const AppointmentForm = () => {
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-      reset
-    } = useForm();
-  
+    const [appointment, setAppointment] = useState(appointmentsLS);
+    const {register, handleSubmit, formState: { errors }, reset} = useForm();
+    
     const newAppointment = (data) => {
-      console.log(data);
-      reset()
+    console.log(data);
+    reset();
     };
-  
+
+    const handleChange = (e) => {
+    setAppointment(e.target.value);
+    };
+
+    useEffect(() => {
+    localStorage.setItem('appointment', JSON.stringify(appointment));
+  }, [appointment]);
+    
     return (
       <>
         <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)} noValidate> {/* BORRAR DESPUES /> */}
@@ -169,8 +177,17 @@ const AppointmentForm = () => {
             <p className='text-danger'>{errors.symptoms?.message}</p>
           </fieldset>
           <div className='text-end px-3'>
-            <button type='submit' className='mt-3 mb-3 btn-schedule'>Schedule</button></div>
+            <button type='submit' className='mt-3 mb-3 btn-schedule' onChange={handleChange}>Schedule</button></div>
         </form>
+        <hr />
+        <ul className="listNinth list-group">
+          {appointment.length === 0 && <p className='text-center'>There is no appointment yet.</p>}
+          {appointment.map((appointment) => (
+            <li className="list-group-item d-flex align-items-center justify-content-between" key={appointment.id}> - {appointment.appointment}
+            <button className="btn btn-warning rounded ms-3">x</button>
+            </li>
+          ))}
+        </ul>
       </>
     );
   };
