@@ -56,7 +56,7 @@ const AppointmentForm = () => {
     
     return (
       <>
-        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)} noValidate>
+        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)}>
         <div className='card-header fw-bold text-center'>🐱🐶🐵 ROLLING VET 🐭🐹🦝</div>
         <p className='text-center mt-2'>Fill out the form to create an appointment</p>
           <fieldset className='px-3'>
