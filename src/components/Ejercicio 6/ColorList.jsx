@@ -10,7 +10,7 @@ const ColorList = (props) => {
 };
 
   return <section className="row mt-3">
-    {colors.map((color) => <ColorItem key={color.id} color={color} handleDelete={handleDelete} />)}
+    {colors.map((color) => <ColorItem key={color.id} color={color} handleDelete={handleDelete}/>)}
   </section>
 };
 

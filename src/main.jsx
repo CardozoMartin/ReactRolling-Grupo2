@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom/client'
 // import Ejercicio6 from './components/Ejercicio 6/Ejercicio6';
 // import App7 from './components/Ejercicio 7/Ejercicio7';
 // import FormExsEight from './components/Ejercicio 8/Ejercicio8';
-import Appointment from './components/Ejercicio 9/Ejercicio9';
+import App9 from './components/Ejercicio 9/Ejercicio9';
 // import ClimaApp from './components/Ejercicio 13/Ejercicio13';
 
 
@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   {/* <Ejercicio6 /> */}
   {/* <App7 /> */}
   {/* <FormExsEight /> */}
-  <Appointment />
+  <App9 />
   {/* Ejercicio10 */}
   {/* Ejercicio11 */}
   {/* Ejercicio12 */}
