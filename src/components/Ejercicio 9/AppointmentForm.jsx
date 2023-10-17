@@ -50,13 +50,9 @@ const AppointmentForm = () => {
     };
 
     useEffect(() => {
-    const dataFromLS = JSON.parse(localStorage.getItem('appointment')) || [];
+    const dataFromLS = JSON.parse(localStorage.getItem('appointments')) || [];
     setAppointment(dataFromLS);
   }, []);
-
-    useEffect(() => {
-    localStorage.setItem('appointment', JSON.stringify(appointment));
-  }, [appointment]);
     
     return (
       <>
