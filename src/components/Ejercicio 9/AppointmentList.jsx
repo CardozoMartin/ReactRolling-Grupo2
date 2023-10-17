@@ -1,9 +1,9 @@
 const AppointmentList = (props) => {
     const {appointment} = props;
 
-    const handleDelete = (id) => {
-        setAppointment((item) => item.filter((appointments) => appointments.id !== id));
-      };
+    // const handleDelete = (id) => {
+    //     setAppointment((item) => item.filter((appointments) => appointments.id !== id));
+    //   };
     
     return (
     <section className="bg-dark p-3 mt-4 col-5 m-2">
@@ -17,7 +17,7 @@ const AppointmentList = (props) => {
                 <p>Time: {appointment.time}</p>
                 <p>Symptoms: {appointment.symptoms}</p>
                 </div>
-                <button onClick={() => handleDelete(appointment.id)}>Delete</button>
+                {/* <button onClick={() => handleDelete(appointment.id)}>Delete</button> */}
                 </section>
                 );
             };

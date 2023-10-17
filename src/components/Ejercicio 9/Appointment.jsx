@@ -83,7 +83,7 @@ const Appointment = (props) => {
                     </fieldset>
                     </div>
                     <div className='text-end'>
-                    <button type='submit' className='mt-3 mb-3 btn-schedule'>Schedule</button></div>
+                    <button type='submit' className='mt-3 mb-3'>Schedule</button></div>
                     </form>
                     );
                   };
