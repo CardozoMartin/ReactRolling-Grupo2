@@ -115,7 +115,7 @@ body{
   justify-content: center;
 }
 
-.btn-delete-ninth{
+.btn-delete-ninth, .btn-delete-tenth {
   background-color: #bb3928;
   color: #f9f9f9;
   border-radius: 0.5rem;
@@ -126,6 +126,30 @@ body{
     background-color: #df5f4f;
     color: #000000;
   }
+}
+
+.tenth-form{
+  display: flex;
+  justify-content: center;
+  width: 40vw;
+  margin-top: 50px;
+}
+
+.btn-load{
+  background-color: #9725b9;
+  color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 5px;
+  width: 8vw;
+  
+  &:hover{
+    background-color: #c567e2;
+    color: #000000;
+  }
+}
+
+.movie-cover{
+  width: 12vw;
 }
 
 /* .article-image {

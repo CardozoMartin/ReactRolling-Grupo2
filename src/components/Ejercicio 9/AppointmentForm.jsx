@@ -14,8 +14,7 @@ import { createRandomId } from '../../Utils';
 const AppointmentForm = () => {
   const {register, handleSubmit, formState: { errors }, reset} = useForm();
   const [appointment, setAppointment] = useState([]);
-  const [formData, setFormData] = useState({});
-    
+
     const newAppointment = (data) => {
       const newAppointmentData = {
       id: createRandomId(0,6000),
@@ -45,7 +44,6 @@ const AppointmentForm = () => {
       if (words.some((word) => word.trim() === '')) {
         return 'Please avoid meaningless spaces in the name.';
       }
-    
       return true;
     };
 
