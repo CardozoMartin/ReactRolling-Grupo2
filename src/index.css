@@ -110,10 +110,22 @@ body{
 
 .listNinth{
   list-style: none;
-  padding: 0;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center; */
+  justify-content: center;
+}
+
+.btn-delete-ninth{
+  background-color: #bb3928;
+  color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 3px;
+  width: 5vw;
+  
+  &:hover{
+    background-color: #df5f4f;
+    color: #000000;
+  }
 }
 
 /* .article-image {

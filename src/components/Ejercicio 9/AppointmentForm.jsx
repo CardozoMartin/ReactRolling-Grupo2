@@ -42,7 +42,7 @@ const AppointmentForm = () => {
     
     return (
       <>
-        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)} noValidate> {/* BORRAR DESPUES /> */}
+        <form className='ninth-form container card' onSubmit={handleSubmit(newAppointment)}>
         <div className='card-header fw-bold text-center'>🐱🐶🐵 ROLLING VET 🐭🐹🦝</div>
         <p className='text-center mt-2'>Fill out the form to create an appointment</p>
           <fieldset className='px-3'>
@@ -180,8 +180,8 @@ const AppointmentForm = () => {
                 message: 'This field has a minimum of 3 characters.',
               },
               maxLength: {
-                value: 30,
-                message: 'This field has a maximum of 30 characters.',
+                value: 50,
+                message: 'This field has a maximum of 50 characters.',
               },
             })}
             required/>
@@ -191,28 +191,43 @@ const AppointmentForm = () => {
             <button type='submit' className='mt-3 mb-3 btn-schedule'>Schedule</button></div>
         </form>
         <hr />
-        <ul className="listNinth list-group container card">
-        {appointment.length === 0 && <p className='text-center mt-2'>There is no appointment yet.</p>}
-        <div className='card-header fw-bold text-center'></div>
+      <section className="container w-50">
+      <article className="row">
         {appointment.map((appointment) => (
-        <li className="list-group-item d-flex align-items-center justify-content-between" key={appointment.id}>
-          - Pets Name: {appointment.appointment.name}
-          - Owner: {appointment.appointment.owner}
-          - Phone: {appointment.appointment.phone}
-          <div className='card-body'>
-          - Date: {appointment.appointment.date}
-          - Time: {appointment.appointment.time}
-          - Pet Sex: {appointment.appointment.sex}
-          - Pet Age: {appointment.appointment.age}
-          - Symptoms: {appointment.appointment.symptoms}
+          <div className="col-6" key={appointment.id}>
+            <div className="card mb-3">
+              <div className="card-body">
+                <h5 className="card-title text-center mb-3">Appointment 🗓</h5>
+                <hr />
+                <h6 className="card-subtitle mb-2 text-muted ps-3">
+                  Pets Name: {appointment.appointment.name}
+                </h6>
+                <p className="card-text ps-3">
+                  - Owner: {appointment.appointment.owner}
+                  <br />
+                  - Phone: {appointment.appointment.phone}
+                  <br />
+                  - Date: {appointment.appointment.date}
+                  <br />
+                  - Time: {appointment.appointment.time}
+                  <br />
+                  - Pet Sex: {appointment.appointment.sex}
+                  <br />
+                  - Pet Age: {appointment.appointment.age}
+                  <br />
+                  - Symptoms: {appointment.appointment.symptoms}
+                </p>
+                <div className='text-end'>
+                <button type="button" className="btn-delete-ninth">Delete</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="card-footer text-body-secondary text-end">
-          <button className="btn btn-warning rounded ms-3">x</button></div>
-          </li>
-          ))}
-          </ul>
-          </>
-          );
-        };
+        ))}
+      </article>
+    </section>
+    </>
+    );
+  };
   
   export default AppointmentForm;
