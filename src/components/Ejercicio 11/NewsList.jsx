@@ -3,6 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 // import { toast } from "sonner";
 
 // import NewsCard from "./NewsCard";
+import SearchForm from "./SearchForm";
 // import { createRandomId } from "../../Utils";
 
 const NewsList = () => {
@@ -34,11 +35,12 @@ const NewsList = () => {
     //   }
 
   return (
-    <section className="news-list">
-        <h1>ROLLING NEWS</h1>
-        {/* {data.results.map(new => (
-        <NewsCard />
-        ))} */}
+    <section className="news-list text-light text-center">
+        <h1 className="mt-5 mb-5">ROLLING NEWS 📰</h1>
+        {/* {data.results.map(new => ( */}
+          <SearchForm />
+        {/* <NewsCard /> */}
+        {/* ))} */}
     </section>
   )
 }
