@@ -1,5 +1,22 @@
 body{
-    background-color: #272727;
+  background-color: #272727;
+}
+
+.section-navbar{
+  background-color: #bb3928;
+}
+
+.section-footer{
+  background-color: #5cd6a3;
+  padding: 40px;
+}
+
+.section-first, .section-second{
+  color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .thirdExercise {

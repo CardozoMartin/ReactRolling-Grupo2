@@ -6,7 +6,7 @@
 
 function App1(){
   return(
-    <div>
+    <div className="section-first">
       <h1>Hello world</h1>
     </div>
   );

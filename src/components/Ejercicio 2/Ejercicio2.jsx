@@ -5,7 +5,7 @@
 
 function App2(props){
   return(
-    <div>
+    <div className="section-second">
       <h1>Hello {props.name}</h1>
     </div>
   );
