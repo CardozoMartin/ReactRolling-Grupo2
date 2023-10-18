@@ -183,9 +183,8 @@ body{
   }
 }
 
-
-/* .article-image {
+.article-image {
   width: 100%;
   height: 125px;
   object-fit: cover;
-} */
+}
