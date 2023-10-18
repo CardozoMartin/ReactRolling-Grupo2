@@ -152,12 +152,18 @@ body{
   width: 12vw;
 }
 
-.section-news{
-  width: 30vw;
+.bg-news{
+  background-color: #f9f9f9;
+  color: #000000;
 }
 
-/* .article-image {
+.section-news{
+  width: 30vw;
+  background-color: #cc906d;
+}
+
+.article-image {
   width: 100%;
   height: 125px;
   object-fit: cover;
-} */
+}

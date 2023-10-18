@@ -34,17 +34,9 @@ const SearchForm = (props) => {
 
   return (
     <form className='card w-100 p-4' onSubmit={handleSubmit}>
-      {isNews && (
-        <div className='alert alert-info'>
-          <p className='mb-0'>
-            No se utiliza las categorias porque la API ya no permite filtrar por
-            categorias
-          </p>
-        </div>
-      )}
       <fieldset className='d-flex'>
         <label htmlFor='search-input' className='me-2 mt-2'>
-          Buscar:
+          Search:
         </label>
         <div className='w-100'>
           <input
@@ -56,7 +48,7 @@ const SearchForm = (props) => {
             disabled={isLoading}
           />
           <div className='invalid-feedback'>
-            Introduce un parámetro de búsqueda
+          Type to search...
           </div>
         </div>
       </fieldset>
@@ -66,7 +58,7 @@ const SearchForm = (props) => {
           disabled={isLoading}
           className='btn btn-primary mt-2'
         >
-          Enviar
+          Search
         </button>
       </div>
     </form>
