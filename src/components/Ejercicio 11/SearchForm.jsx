@@ -1,68 +1,62 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-// ---------------------------
-// Ejercicio 11: Crear una aplicación web con react, que consuma la API provista por
-// https://newsapi.org/ o https://newsdata.io/docs
-// ---------------------------
+// const SearchForm = (props) => {
+//   const { getNews, isLoading, type } = props;
 
+//   const [searchValue, setSearchValue] = useState('');
+//   const [isInvalid, setIsInvalid] = useState(false);
 
-const SearchForm = (props) => {
-  const { fetchNews, isLoading, type } = props;
+//   // Para reutilizar el componente en el ejercicio 13
+//   const isNews = type === 'news';
 
-  const [searchValue, setSearchValue] = useState('');
-  const [isInvalid, setIsInvalid] = useState(false);
+//   const handleChange = (e) => {
+//     setSearchValue(e.target.value);
+//   };
 
-  // Para reutilizar el componente en el ejercicio 13
-  const isNews = type === 'news';
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
 
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-  };
+//     if (searchValue.trim().length === 0) {
+//       setIsInvalid(true);
+//       return;
+//     } else {
+//       setIsInvalid(false);
+//     }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+//     getNews(searchValue);
+//   };
 
-    if (searchValue.trim().length === 0) {
-      setIsInvalid(true);
-      return;
-    } else {
-      setIsInvalid(false);
-    }
+//   return (
+//     <form className='card w-100 p-4' onSubmit={handleSubmit}>
+//       <fieldset className='d-flex'>
+//         <label htmlFor='search-input' className='me-2 mt-2'>
+//           Buscar:
+//         </label>
+//         <div className='w-100'>
+//           <input
+//             type='text'
+//             id='search-input'
+//             className={`form-control ${isInvalid ? 'is-invalid' : ''}`}
+//             value={searchValue}
+//             onChange={handleChange}
+//             disabled={isLoading}
+//           />
+//           <div className='invalid-feedback'>
+//             Introduce un parámetro de búsqueda
+//           </div>
+//         </div>
+//       </fieldset>
+//       <div className='text-end'>
+//         <button
+//           type='submit'
+//           disabled={isLoading}
+//           className='btn btn-primary mt-2'
+//         >
+//           Enviar
+//         </button>
+//       </div>
+//     </form>
+//   );
+// };
 
-    fetchNews(searchValue);
-  };
-
-  return (
-    <form className='card w-100 p-4' onSubmit={handleSubmit}>
-      <fieldset className='d-flex'>
-        <label htmlFor='search-input' className='me-2 mt-2'>
-          Search:
-        </label>
-        <div className='w-100'>
-          <input
-            type='text'
-            id='search-input'
-            className={`form-control ${isInvalid ? 'is-invalid' : ''}`}
-            value={searchValue}
-            onChange={handleChange}
-            disabled={isLoading}
-          />
-          <div className='invalid-feedback'>
-          Type to search...
-          </div>
-        </div>
-      </fieldset>
-      <div className='text-end'>
-        <button
-          type='submit'
-          disabled={isLoading}
-          className='btn btn-primary mt-2'
-        >
-          Search
-        </button>
-      </div>
-    </form>
-  );
-};
-
-export default SearchForm;
+// export default SearchForm;

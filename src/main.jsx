@@ -15,7 +15,7 @@ import { Toaster } from 'sonner';
 // import FormExsEight from './components/Ejercicio 8/Ejercicio8';
 // import AppointmentForm from './components/Ejercicio 9/AppointmentForm';
 // import MovieForm from './components/Ejercicio 10/Ejercicio10';
-import Ejercicio11 from './components/Ejercicio 11/Ejercicio11';
+import NewsList from './components/Ejercicio 11/NewsList';
 // import ClimaApp from './components/Ejercicio 13/Ejercicio13';
 
 
@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   {/* <App9 /> */}
   {/* <AppointmentForm /> */}
   {/* <MovieForm /> */}
-  <Ejercicio11 />
+  <NewsList />
   {/* Ejercicio12 */}
  {/* < ClimaApp /> */}
   {/* Ejercicio14 */}

@@ -1,18 +1,46 @@
-import ArticleCard from './ArticleCard';
+import { useMutation } from "@tanstack/react-query";
 
-const NewsList = (props) => {
-  const { news, isLoading } = props;
+// import { toast } from "sonner";
 
-  if (isLoading) {
-    return <p className='mt-3 text-center text-bold'>Loading...</p>;
-  }
+// import NewsCard from "./NewsCard";
+// import { createRandomId } from "../../Utils";
+
+const NewsList = () => {
+
+    const getNews = async () => {
+        const response = await fetch(`https://newsapi.org/v2/everything?language=es&q=${query}&pageSize=15&apiKey=${API_KEY}`);
+        return response.json();
+    }
+
+    // const {data, isLoading, isError} = useQuery(['news'], getNews)
+
+    // const addNew = useMutation(postNew);
+
+    // const handleClick = () => {
+    //     addNew.mutate({
+    //       id: createRandomId(0, 5000),
+    //       userId: createRandomId(0, 5000),
+    //       title: 'News',
+    //       completed: false,
+    //     });
+    //   };
+    
+    //   if (isError) {
+    //     toast.error('Ocurrió un error');
+    //   }
+    
+    //   if (addNew.isError) {
+    //     toast.error('Ocurrió un error al buscar la noticia');
+    //   }
 
   return (
-    <section className='mt-3 row w-100'>
-      {news.map((article) => (
-        <ArticleCard key={article.source.id} article={article} />
-      ))}
+    <section className="news-list">
+        <h1>ROLLING NEWS</h1>
+        {/* {data.results.map(new => (
+        <NewsCard />
+        ))} */}
     </section>
-  );
-};
+  )
+}
+
 export default NewsList;
