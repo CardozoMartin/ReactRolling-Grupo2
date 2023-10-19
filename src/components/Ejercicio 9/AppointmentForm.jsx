@@ -205,7 +205,7 @@ const AppointmentForm = () => {
             <button type='submit' className='mt-3 mb-3 btn-schedule'>Schedule</button></div>
         </form>
         <hr />
-      <section className="container w-50">
+      <section className="container w-50 mb-5">
       <article className="row">
         {appointment.length === 0 && <p className='text-center card p-3'>There are no scheduled appointments.</p>}
         {appointment.map((appointment) => (
