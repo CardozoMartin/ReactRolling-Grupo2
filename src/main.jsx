@@ -20,6 +20,7 @@ import AppointmentForm from './components/Ejercicio 9/AppointmentForm';
 import MovieForm from './components/Ejercicio 10/Ejercicio10';
 // import NewsList from './components/Ejercicio 11/NewsList';
 // import ClimaApp from './components/Ejercicio 13/Ejercicio13';
+import HomeView from './components/Ejercicio 14/HomeView.jsx';
 import Error404 from './common/Error404.jsx';
 
 
@@ -51,9 +52,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='/9' element={<AppointmentForm/>}></Route>
     <Route exact path='/10' element={<MovieForm/>}></Route>
     {/* <Route exact path='/11' element={}></Route> */}
-    {/* <Route exact path='/12' element={}></Route>
-    <Route exact path='/13' element={}></Route>
-    <Route exact path='/14' element={}></Route> */}
+    {/* <Route exact path='/12' element={}></Route> */}
+    {/* <Route exact path='/13' element={}></Route> */}
+    <Route exact path='/14' element={<HomeView />}></Route>
     <Route exact path='/error' element={<Error404/>}></Route>
     </Routes>
     </main>
