@@ -1,26 +1,23 @@
-const Input = (props) => {
+const Textarea = (props) => {
     const {
         placeholder, 
         label, 
-        type, 
         name, 
         options = {}, 
         register, 
-        className = '',
-        error = false,
+        className = ''
     } = props;
 
   return (
     <fieldset className={`form-floating text-dark ${className}`}>
-            <input 
-            type={type}
-            id={`${name}-input`} 
-            className={`form-control ${error? 'is-invalid' : ''}`}
+            <textarea 
+            id={`${name}-textarea`} 
+            className="form-control" 
             placeholder={placeholder}
             {...register(name,options)}
             />
-            <label htmlFor={`${name}-input`}>{label}:</label>
+            <label htmlFor={`${name}-textarea`}>{label}:</label>
         </fieldset>
   )
 };
-export default Input;
+export default Textarea;

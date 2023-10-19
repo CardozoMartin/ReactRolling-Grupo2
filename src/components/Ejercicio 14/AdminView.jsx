@@ -5,7 +5,7 @@ const AdminView = () => {
   return (
     <section className="container text-light text-center">
     <h1>Administration panel 🖥</h1>
-    <hr />
+    <hr className="w-50 container" />
     <AdminForm />
     <AdminTable />
     </section>

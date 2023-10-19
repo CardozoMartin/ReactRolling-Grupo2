@@ -1,5 +1,7 @@
 import AdminView from "./AdminView";
 
+import './Ejercicio14.css'
+
 // ---------------------------
 // Ejercicio 14: Crea una aplicación web, que permita mostrar un blog de recetas de cocina en una
 // página, desde otra pagina debo poder agregar, modificar o quitar las recetas y
@@ -8,8 +10,8 @@ import AdminView from "./AdminView";
 
 const HomeView = () => {
   return (
-    <section className="text-light text-center">
-    <h1>HomeView</h1>
+    <section className="text-light text-center section-home container">
+    <h5>HomeView</h5>
     <AdminView />
     </section>
   )
