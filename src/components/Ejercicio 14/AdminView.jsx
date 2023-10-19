@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
-
 import AdminForm from "../../Admin/AdminForm/AdminForm";
 import AdminTable from "../../Admin/AdminTable/AdminTable";
 
+const getBlogsFn = async () => {
+  const res = await fetch('http://localhost:3000/blogs');
 
-const blogsLS = JSON.parse(localStorage.getItem('blogs')) || [];
+  if(!res.ok){
+    throw new Error ('An error occurred while bringing the blogs');
+  }
+
+  const data = await res.json();
+
+  return data;
+}
 
 const AdminView = () => {
-    const [blogs, setBlogs] = useState(blogsLS);
-
-    useEffect(()=>{
-        localStorage.setItem('blogs',JSON.stringify(blogs));
-    },[blogs])
+  const {data, isLoading, isError} = useQuery(['blogs'], getBlogsFn);
 
   return (
     <section className="container text-light text-center">
