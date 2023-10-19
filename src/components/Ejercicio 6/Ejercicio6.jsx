@@ -18,7 +18,7 @@ const Ejercicio6 = () => {
   }, [colors]);
 
   return (
-    <section className="container my-4 mb-5">
+    <section className="container mb-5">
     <ColorForm setColors={setColors} />
     <ColorList colors={colors} setColors={setColors} />
     </section>

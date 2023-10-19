@@ -52,7 +52,7 @@ const MovieForm = () => {
     return (
         <>
         <form className='tenth-form container card' onSubmit={handleSubmit(newMovie)}>
-        <div className='card-header fw-bold text-center'>🎥🎞 ROLLING CINEMA 🎬📽</div>
+        <div className='mt-4 fw-bold fs-4 text-center'>🎥🎞 ROLLING CINEMA 🎬📽</div>
           <p className='text-center mt-2'>Fill out the form to create a movie</p>
             <fieldset className='px-3'>
               <label htmlFor='name-input' className='form-label'>

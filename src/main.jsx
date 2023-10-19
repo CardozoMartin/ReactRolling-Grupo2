@@ -37,7 +37,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <QueryClientProvider client = {queryClient}>
   <BrowserRouter>
-    <Navbar></Navbar>
+    <Navbar />
+    <main>
     <Routes>
     <Route exact path='/1' element={<App1 name="world"/>}></Route>
     <Route exact path='/2' element={<App2 name="My friend"/>}></Route>
@@ -55,7 +56,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='/14' element={}></Route> */}
     <Route exact path='/error' element={<Error404/>}></Route>
     </Routes>
-    <Footer></Footer>
+    </main>
+    <Footer />
     </BrowserRouter>
     <Toaster richColors position='top-rigth'/>
     </QueryClientProvider>

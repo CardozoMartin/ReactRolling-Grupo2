@@ -28,8 +28,8 @@ const ColorForm = (props) => {
 
   return (
     <form className="card section-card" onSubmit={handleSubmit}>
-        <div className="card-header fw-bold text-center">🌈 Manage colors 🌈</div>
-        <div className="card-body d-flex align-items-center gap-4 justify-content-center">
+        <div className="mt-3 fs-3 mb-4 fw-bold text-center">🌈 Manage colors 🌈</div>
+        <div className="card-body d-flex align-items-center mb-3 gap-4 justify-content-center">
           <ColorPicker color={color} handleChange={handleChange} />
           <p className="d-inline color-text">{color}</p>
           </div>

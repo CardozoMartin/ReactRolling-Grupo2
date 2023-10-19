@@ -16,7 +16,9 @@ const Navbar = () => {
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li className="nav-item">
-            <NavLink className="nav-link active" aria-current="page" to='/1'>Home</NavLink>
+            <NavLink className={({isActive}) =>
+          isActive ? 'nav-link actived fw-bold' : 'nav-link'
+          } to='/1'>Home</NavLink>
           </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle fw-bold" to='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
