@@ -3,4 +3,4 @@ const DetailView = () => {
     <div>DetailView</div>
   )
 }
-export default DetailView
+export default DetailView;

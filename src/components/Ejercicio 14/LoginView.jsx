@@ -3,4 +3,4 @@ const LoginView = () => {
     <div>LoginView</div>
   )
 }
-export default LoginView
+export default LoginView;

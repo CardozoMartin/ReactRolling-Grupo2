@@ -1,6 +1,9 @@
 const AdminView = () => {
   return (
-    <div>AdminView</div>
+    <>
+    <h1>Administration panel 🖥</h1>
+    <hr />
+    </>
   )
 }
-export default AdminView
+export default AdminView;
