@@ -14,3 +14,37 @@
     color: #000000;
   }
 }
+
+.btn-edit{
+    background-color: #d8aa36;
+    color: #f9f9f9;
+    border-radius: 0.5rem;
+    padding: 5px;
+    width: 4vw;
+  
+  &:hover{
+    background-color: #edcb73;
+    color: #000000;
+  }
+}
+
+.btn-delete{
+    background-color: #9e2020;
+    color: #f9f9f9;
+    border-radius: 0.5rem;
+    padding: 5px;
+    width: 4vw;
+  
+  &:hover{
+    background-color: #a16363;
+    color: #000000;
+  }
+}
+
+.img-blog{
+width: 20vw;
+height: 125px;
+border-radius: 1rem;
+object-fit: cover;
+}
+

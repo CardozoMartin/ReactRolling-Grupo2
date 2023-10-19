@@ -1,6 +1,26 @@
-const AdminTable = () => {
+import TableRow from "./TableRow";
+
+const AdminTable = (props) => {
+    const {blogs, setBlogs} = props;
+
   return (
-    <div>AdminTable</div>
+    <section className="table-responsive mt-3 rounded">
+    <table className="table">
+        <thead>
+            <tr className="fs-5">
+                <th>#</th>
+                <th>Image:</th>
+                <th>Title:</th>
+                <th>Actions:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {blogs.map((blog,index) => (
+            <TableRow blog={blog} key={blog.id} index={index} />
+            ))}
+        </tbody>
+    </table>
+    </section>
   )
 }
 export default AdminTable;
