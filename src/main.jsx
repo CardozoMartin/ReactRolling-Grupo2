@@ -59,8 +59,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
     </main>
     <Footer />
-    </BrowserRouter>
     <Toaster richColors position='top-rigth'/>
+    </BrowserRouter>
     </QueryClientProvider>
     </React.StrictMode>
 );

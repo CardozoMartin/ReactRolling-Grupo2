@@ -1,34 +1,66 @@
 import { useForm } from 'react-hook-form';
 
+import { toast } from 'sonner';
+
 import Input from '../../components/Input/Input';
 import Textarea from '../../components/Textarea/Textarea';
 
-const AdminForm = () => {
-  const {register, handleSubmit: onSubmitRHF, formState: {errors}} = useForm();
+import { createRandomId } from '../../Utils';
+
+
+const AdminForm = (props) => {
+    const {setBlogs} = props;
+
+  const {
+    register, 
+    handleSubmit: onSubmitRHF, 
+    formState: {errors},
+    reset,
+} = useForm();
 
   const handleSubmit = (data) => {
     console.log(data)
-  }
+
+    const newBlog = {...data, id: createRandomId()};
+    setBlogs((prev)=>[...prev, newBlog]);
+
+    toast.success('Blog successfully saved.');
+
+    reset();
+  };
   
-    return <form className='card p-3 w-50 container' onSubmit={onSubmitRHF(handleSubmit)}>
+    return <form className='card p-3 w-50 container' onSubmit={onSubmitRHF(handleSubmit)} noValidate>
         <Input 
         register={register}
         options={{
             required: true,
-            minLength: 4,
-            maxLength: 35,
+            minLength: {
+                value: 4,
+                message: 'This field has a minimum of 4 characters.',
+            },
+            maxLength: {
+                value: 60,
+                message: 'This field has a maximum of 60 characters.',
+            }
         }}
         label='Title'
         name='title'
         placeholder='Find your favorite recipe...'
         error={!!errors.title}
         />
+        <p className='text-danger'>{errors.title?.message}</p>
         <Input 
         register={register}
         options={{
             required: true,
-            minLength: 4,
-            pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp|jpeg)/i,
+            minLength: {
+                value: 4,
+                message: 'This field has a minimum of 4 characters.',
+            },
+            pattern:{
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp|jpeg)/i,
+                message: 'Please enter a valid link.',
+            } 
         }}
         className='mt-2'
         type='url'
@@ -36,13 +68,21 @@ const AdminForm = () => {
         name='image-url'
         placeholder='Link to image'
         error={!!errors['image-url'] }
+        required
         />
+        <p className='text-danger'>{errors['image-url']?.message}</p>
         <Textarea 
         register={register}
         options={{
             required: true,
-            minLength: 4,
-            maxLength: 3500,
+            minLength: {
+                value: 4,
+                message: 'This field has a minimum of 4 characters.',
+            },
+            maxLength: {
+                value: 3500,
+                message: 'This field has a maximum of 3500 characters.',
+            }
         }}
         className='mt-2'
         label='Blog content'
@@ -50,6 +90,8 @@ const AdminForm = () => {
         placeholder='Blog content'
         error={!!errors.content}
         />
+        <p className='text-danger'>{errors.content?.message}</p>
+
         <div className='text-end'>
         <button type='submit' className='btn-save mt-3'>Save</button>
         </div>
