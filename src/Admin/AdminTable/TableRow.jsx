@@ -6,8 +6,13 @@ import { toast } from "sonner";
 
 import { deleteBlogFn } from "../../api/blogs";
 
+import { useBlog } from "../../stores/useBlog";
+
 const TableRow = (props) => {
     const {blog,index} = props;
+
+    // Zustand
+    const {setBlogToEdit} = useBlog();
 
     // Tanstack query
     const queryClient = useQueryClient();
@@ -27,6 +32,11 @@ const TableRow = (props) => {
     });
 
     // Handlers
+
+    const handleEdit = () => {
+      setBlogToEdit(blog);
+    }
+
     const handleDelete = () => {
       Swal.fire({
         title: 'Are you sure?',
@@ -54,7 +64,7 @@ const TableRow = (props) => {
         </td>
         <td className="fs-5">{blog.title}</td>
         <td>
-            <button type="button" className="btn-edit">Edit</button>
+            <button type="button" className="btn-edit" onClick={handleEdit}>Edit</button>
             <button type="button" className="btn-delete ms-2 mt-5" onClick={handleDelete}>Delete</button>
             </td>
     </tr>

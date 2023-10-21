@@ -26,6 +26,20 @@ export const getBlogsFn = async () => {
     }
   };
 
+  export const putBlogFn = async (data) => {
+    const res = await fetch(`${API_URL}/blogs/${data.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    if (!res.ok){
+        throw new Error('An error occurred while updating the blog.');
+    }
+  };
+
   export const deleteBlogFn = async (blogId) => {
     const res = await fetch(`${API_URL}/blogs/${blogId}`, {
       method: 'DELETE',

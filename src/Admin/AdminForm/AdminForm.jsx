@@ -9,22 +9,39 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Input from '../../components/Input/Input';
 import Textarea from '../../components/Textarea/Textarea';
 
-import { postBlogFn } from '../../api/blogs';
+import { postBlogFn, putBlogFn } from '../../api/blogs';
+
+import { useBlog } from '../../stores/useBlog';
 
 
 const AdminForm = () => {
 // RHF
-  const {
+    const {
     register, 
     handleSubmit: onSubmitRHF, 
     formState: {errors},
     reset,
+    setValue,
 } = useForm();
+
+// Zustand
+
+const {blog, clearBlog} = useBlog();
+
+const isEditing = !!blog;
+
+if (isEditing) {
+    setValue('title', blog.title);
+    setValue('image-url', blog['image-url']);
+    setValue('content', blog.content);
+}
+
 
 // Tanstack Query
 
 const queryClient = useQueryClient();
 
+// Create (POST)
 const {mutate: postBlog} = useMutation({
     mutationFn: postBlogFn,
     onSuccess: () => {
@@ -41,11 +58,36 @@ const {mutate: postBlog} = useMutation({
     }
 })
 
+// Update or Edit (PUT)
+const {mutate: putBlog} = useMutation({
+    mutationFn: putBlogFn,
+    onSuccess: () => {
+    Swal.close();
+    toast.success('Blog successfully updated.');
+
+    reset();
+
+    // Limpiar el estado global al finalizar el PUT
+        clearBlog();
+
+    queryClient.invalidateQueries('blogs');
+    },
+    onError: () => {
+        Swal.close();
+        toast.error('An error occurred while updating the blog.')
+    }
+})
+
 // Handlers
 
   const handleSubmit = (data) => {
-      postBlog(data);
       Swal.showLoading();
+
+      if (isEditing){
+        putBlog({...data, id: blog.id});
+      } else {
+        postBlog(data);
+      }
   };
   
   // Render
