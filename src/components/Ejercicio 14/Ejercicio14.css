@@ -16,14 +16,14 @@
 }
 
 .btn-edit{
-    background-color: #d8aa36;
+    background-color: #85b5eb;
     color: #f9f9f9;
     border-radius: 0.5rem;
-    padding: 5px;
+    padding: 7px;
     width: 4vw;
   
   &:hover{
-    background-color: #edcb73;
+    background-color: #2683ec;
     color: #000000;
   }
 }
@@ -32,11 +32,11 @@
     background-color: #9e2020;
     color: #f9f9f9;
     border-radius: 0.5rem;
-    padding: 5px;
+    padding: 7px;
     width: 4vw;
   
   &:hover{
-    background-color: #a16363;
+    background-color: #db4949;
     color: #000000;
   }
 }

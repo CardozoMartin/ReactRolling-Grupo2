@@ -2,15 +2,16 @@ import { useForm } from 'react-hook-form';
 
 import { toast } from 'sonner';
 
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
 import Input from '../../components/Input/Input';
 import Textarea from '../../components/Textarea/Textarea';
 
-import { createRandomId } from '../../Utils';
+import { postBlogFn } from '../../api/blogs';
 
 
-const AdminForm = (props) => {
-    const {setBlogs} = props;
-
+const AdminForm = () => {
+// RHF
   const {
     register, 
     handleSubmit: onSubmitRHF, 
@@ -18,15 +19,25 @@ const AdminForm = (props) => {
     reset,
 } = useForm();
 
-  const handleSubmit = (data) => {
-    console.log(data)
+// Tanstack Query
 
-    const newBlog = {...data, id: createRandomId()};
-    setBlogs((prev)=>[...prev, newBlog]);
+const queryClient = useQueryClient();
 
+const {mutate: postBlog} = useMutation({
+    mutationFn: postBlogFn,
+    onSuccess: () => {
     toast.success('Blog successfully saved.');
 
     reset();
+
+    queryClient.invalidateQueries('blogs');
+    }
+})
+
+// Handlers
+
+  const handleSubmit = (data) => {
+    postBlog(data);
   };
   
     return <form className='card p-3 w-50 container' onSubmit={onSubmitRHF(handleSubmit)} noValidate>

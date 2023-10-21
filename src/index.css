@@ -128,7 +128,7 @@ body{
   color: #f9f9f9;
   border-radius: 0.5rem;
   padding: 5px;
-  width: 5vw;
+  width: 7vw;
   
   &:hover{
     background-color: #3d916e;
@@ -153,7 +153,7 @@ body{
   color: #f9f9f9;
   border-radius: 0.5rem;
   padding: 3px;
-  width: 4vw;
+  width: 6vw;
   
   &:hover{
     background-color: #df5f4f;

@@ -1,4 +1,29 @@
 {
-  "blogs": [],
+  "blogs": [
+    {
+      "title": "Asado",
+      "image-url": "https://www.clarin.com/img/2022/03/07/0w2kcAVNO_1200x630__1.jpg",
+      "content": "Quitárle la grasita al riñón y a los chinchulines, al riñón lo abrís en forma transversal por el medio , a los chunchlines los cortás y unís las puntas con un palillo enrroscando. Colocárlos en un bol y dejárlos una hora en vinagre.",
+      "id": 1
+    },
+    {
+      "title": "Lasagna",
+      "image-url": "https://www.recetasdesbieta.com/wp-content/uploads/2018/10/lasagna-original..jpg",
+      "content": "Para preparar la salsa: coloque la sartén sobre la estufa y encienda el fuego de bajo a medio. Cuando la sartén esté caliente, agregue el aceite. Agregue la cebolla y el ajo y cocine, revolviendo frecuentemente hasta que quede blando, de 10 a 15 minutos",
+      "id": 2
+    },
+    {
+      "title": "Pollo al curry",
+      "image-url": "https://www.paulinacocina.net/wp-content/uploads/2015/06/ookkk.jpg",
+      "content": "Calienta 2 cucharadas de aceite de oliva en una sartén de hierro de De Buyer. Sofríe la cebolla durante 3 minutos. Luego añade el ajo y el jengibre, mézclalo todo y cocina durante 2-3 minutos.",
+      "id": 3
+    },
+    {
+      "title": "Ensalada de rúcula y queso parmesano",
+      "image-url": "https://images.hola.com/imagenes/cocina/recetas/20191113153942/ensalada-rucula-fresas-parmesano/0-745-490/ensalada-parmesano-m.jpg",
+      "content": "Lavamos la rúcula y la escurrimos bien, la colocamos en un plato y le añadimos vinagre balsámico.",
+      "id": 4
+    }
+  ],
   "users": []
 }
