@@ -68,7 +68,7 @@ const {mutate: putBlog} = useMutation({
     reset();
 
     // Limpiar el estado global al finalizar el PUT
-        clearBlog();
+    clearBlog();
 
     queryClient.invalidateQueries('blogs');
     },

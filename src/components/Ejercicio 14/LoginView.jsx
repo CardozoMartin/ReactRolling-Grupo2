@@ -1,6 +1,9 @@
 const LoginView = () => {
   return (
-    <div>LoginView</div>
+    <>
+    <h1>Welcome</h1>
+    <hr />
+    </>
   )
 }
 export default LoginView;

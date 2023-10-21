@@ -20,9 +20,13 @@ import AppointmentForm from './components/Ejercicio 9/AppointmentForm';
 import MovieForm from './components/Ejercicio 10/Ejercicio10';
 // import NewsList from './components/Ejercicio 11/NewsList';
 // import ClimaApp from './components/Ejercicio 13/Ejercicio13';
-import HomeView from './components/Ejercicio 14/HomeView.jsx';
 import Error404 from './common/Error404.jsx';
 
+// Exercise 14
+import HomeView from './components/Ejercicio 14/HomeView.jsx';
+import AdminView from './components/Ejercicio 14/AdminView.jsx';
+import DetailView from './components/Ejercicio 14/DetailView.jsx';
+import LoginView from './components/Ejercicio 14/LoginView.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -54,12 +58,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Route exact path='/11' element={}></Route> */}
     {/* <Route exact path='/12' element={}></Route> */}
     {/* <Route exact path='/13' element={}></Route> */}
-    <Route exact path='/14' element={<HomeView />}></Route>
     <Route exact path='*' element={<Error404/>}></Route>
+
+    {/* Exercise 14 */}
+    <Route exact path='/14' element={<HomeView />}></Route>
+    <Route exact path='/detail' element={<DetailView />}></Route>
+    <Route exact path='/login' element={<LoginView />}></Route>
+    <Route exact path='/admin' element={<AdminView />}></Route>
     </Routes>
     </main>
     <Footer />
-    <Toaster position='top-rigth richColors'/>
+    <Toaster position='top-right richColors'/>
     </BrowserRouter>
     </QueryClientProvider>
     </React.StrictMode>
