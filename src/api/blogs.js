@@ -22,6 +22,16 @@ export const getBlogsFn = async () => {
     });
 
     if (!res.ok){
-        throw new Error('An error occurred while uploading the blogs');
+        throw new Error('An error occurred while saving the blog.');
     }
+  };
+
+  export const deleteBlogFn = async (blogId) => {
+    const res = await fetch(`${API_URL}/blogs/${blogId}`, {
+      method: 'DELETE',
+    });
+
+    if (!res.ok){
+      throw new Error('An error occurred while deleting the blog.');
+  }
   }
