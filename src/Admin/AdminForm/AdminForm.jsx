@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 
 import { toast } from 'sonner';
 
+import Swal from 'sweetalert2';
+
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import Input from '../../components/Input/Input';
@@ -26,20 +28,27 @@ const queryClient = useQueryClient();
 const {mutate: postBlog} = useMutation({
     mutationFn: postBlogFn,
     onSuccess: () => {
+    Swal.close();
     toast.success('Blog successfully saved.');
 
     reset();
 
     queryClient.invalidateQueries('blogs');
+    },
+    onError: () => {
+        Swal.close();
+        toast.error('An error occurred while saving the blog.')
     }
 })
 
 // Handlers
 
   const handleSubmit = (data) => {
-    postBlog(data);
+      postBlog(data);
+      Swal.showLoading();
   };
   
+  // Render
     return <form className='card p-3 w-50 container' onSubmit={onSubmitRHF(handleSubmit)} noValidate>
         <Input 
         register={register}
