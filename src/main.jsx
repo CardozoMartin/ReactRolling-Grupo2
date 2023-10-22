@@ -62,7 +62,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='*' element={<Error404/>}></Route>
 
     {/* Exercise 14 */}
-    <Route exact path='/14' element={<HomeView />}></Route>
+    <Route exact path='/' element={<HomeView />}></Route>
     <Route exact path='/detail' element={<DetailView />}></Route>
     <Route exact path='/login' element={<LoginView />}></Route>
     <Route exact path='/register' element={<RegisterView />}></Route>

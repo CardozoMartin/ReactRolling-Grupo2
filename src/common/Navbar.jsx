@@ -4,7 +4,10 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-body-tertiary">
     <div className="container">
-      <Link className="navbar-brand" to='/'>Rolling Studio</Link>
+      <Link className="navbar-brand" to='/'>Rolling Code Site</Link>
+      <NavLink className={({isActive}) =>
+          isActive ? 'nav-link actived fw-bold' : 'nav-link'
+          } to='/login'>Login</NavLink>
       <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -37,7 +40,7 @@ const Navbar = () => {
                 <li><NavLink className="dropdown-item" to='/11'>Exercise 11</NavLink></li>
                 <li><NavLink className="dropdown-item" to='/12'>Exercise 12</NavLink></li>
                 <li><NavLink className="dropdown-item" to='/13'>Exercise 13</NavLink></li>
-                <li><NavLink className="dropdown-item" to='/14'>Exercise 14</NavLink></li>
+                <li><NavLink className="dropdown-item" to='/'>Exercise 14</NavLink></li>
               </ul>
             </li>
           </ul>

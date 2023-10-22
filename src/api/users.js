@@ -12,4 +12,6 @@ export const postUserFn = async (data) => {
     if (!response.ok){
         throw new Error('An error occurred while trying to register the user.');
     }
+
+    return data; 
 };

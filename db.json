@@ -25,5 +25,30 @@
       "id": 4
     }
   ],
-  "users": []
+  "users": [
+    {
+      "firstname": "Bianca",
+      "lastname": "Deblinger",
+      "username": "biandeb",
+      "password": "bB1*12345",
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "firstname": "Facundo",
+      "lastname": "Mirande",
+      "username": "facum",
+      "password": "aA1*12345",
+      "isAdmin": false,
+      "id": 2
+    },
+    {
+      "firstname": "Dafne",
+      "lastname": "Deblin",
+      "username": "dafnedeb",
+      "password": "cC1*12345",
+      "isAdmin": false,
+      "id": 3
+    }
+  ]
 }

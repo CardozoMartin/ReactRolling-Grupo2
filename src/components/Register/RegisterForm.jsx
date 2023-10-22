@@ -2,36 +2,61 @@ import { useForm } from "react-hook-form";
 
 import { useMutation } from "@tanstack/react-query";
 
+import Swal from "sweetalert2";
+
+import { useNavigate } from "react-router-dom";
+
+import { toast } from "sonner";
+
 import Input from "../Input/Input";
 
 import { postUserFn } from "../../api/users";
 
-const RegisterForm = () => {
-// RHF
+import { useSession } from "../../stores/useSession";
 
+const RegisterForm = () => {
+// Zustand
+const {login} = useSession();
+
+// RRD
+const navigate = useNavigate();
+
+
+// RHF
 const {
     register, 
     formState: {errors},
     handleSubmit: onSubmitRHF,
     } = useForm();
         
-// Tanstack Query     
 
+// Tanstack Query     
 const {mutate: postUser} = useMutation({
         mutationFn: postUserFn,
-        onSuccess: () => {},
-        onError: () => {},
+        onSuccess: (data) => {
+        Swal.close();
+        toast.success('Welcome ✨')
+
+        // Loguear al usuario
+            login({...data, password: undefined});
+
+        // Navegar a inicio (ya logueado)
+        navigate('/')
+    },
+        onError: () => {
+            Swal.close();
+            toast.error('An error occurred while registering the user.');
+        },
     })
 
 
 // Handlers        
-        
     const handleSubmit = (data) => {
+    Swal.showLoading();
     postUser({...data, isAdmin: false});
     };
       
 // Render    
-
     return (
         <form onSubmit={onSubmitRHF(handleSubmit)} className="row">
             <div className="col-12 col-md-6">
@@ -94,4 +119,5 @@ const {mutate: postUser} = useMutation({
         </form>
     );
 };
+
 export default RegisterForm;
