@@ -13,6 +13,10 @@
     background-color: #3d916e;
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    width: 20%;
+  }
 }
 
 .btn-edit{
@@ -25,6 +29,10 @@
   &:hover{
     background-color: #2683ec;
     color: #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 35%;
   }
 }
 
@@ -39,6 +47,10 @@
     background-color: #db4949;
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    width: 45%;
+  }
 }
 
 .img-blog{
@@ -48,3 +60,19 @@ border-radius: 1rem;
 object-fit: cover;
 }
 
+.btn-sign-in{
+  background-color: #EAA557;
+  color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 7px;
+  width: 4vw;
+
+&:hover{
+  background-color: #EAA557;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  width: 25%;
+}
+}

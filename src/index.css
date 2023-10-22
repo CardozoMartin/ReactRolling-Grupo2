@@ -128,11 +128,15 @@ body{
   color: #f9f9f9;
   border-radius: 0.5rem;
   padding: 5px;
-  width: 7vw;
+  width: 5vw;
   
   &:hover{
     background-color: #3d916e;
     color: #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 35%;
   }
 }
 
@@ -159,6 +163,10 @@ body{
     background-color: #df5f4f;
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    width: 45%;
+  }
 }
 
 .tenth-form{
@@ -178,6 +186,10 @@ body{
   &:hover{
     background-color: #c567e2;
     color: #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 30%;
   }
 }
 

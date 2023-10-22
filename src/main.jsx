@@ -24,9 +24,10 @@ import Error404 from './common/Error404.jsx';
 
 // Exercise 14
 import HomeView from './components/Ejercicio 14/HomeView.jsx';
-import AdminView from './components/Ejercicio 14/AdminView.jsx';
 import DetailView from './components/Ejercicio 14/DetailView.jsx';
 import LoginView from './components/Ejercicio 14/LoginView.jsx';
+import RegisterView from './components/Ejercicio 14/RegisterView.jsx';
+import AdminView from './components/Ejercicio 14/AdminView.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -64,6 +65,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='/14' element={<HomeView />}></Route>
     <Route exact path='/detail' element={<DetailView />}></Route>
     <Route exact path='/login' element={<LoginView />}></Route>
+    <Route exact path='/register' element={<RegisterView />}></Route>
     <Route exact path='/admin' element={<AdminView />}></Route>
     </Routes>
     </main>
