@@ -19,7 +19,7 @@ const HomeView = () => {
   return (
     <section className="text-light text-center section-home container">
     <h5>HomeView</h5>
-    <AdminView />
+    {/* <AdminView /> */}
     </section>
   )
 }

@@ -26,7 +26,7 @@ const AdminView = () => {
   }
 
   return (
-    <section className="container text-light text-center">
+    <section className="container text-light text-center mt-5">
     <h1>Administration panel 🖥</h1>
     <hr className="w-50 container" />
     <AdminForm />

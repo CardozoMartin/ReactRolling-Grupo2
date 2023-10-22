@@ -33,7 +33,18 @@ const {mutate: postLogin} = useMutation({
     mutationFn: postLoginFn,
     onSuccess: (data) => {
     Swal.close();
-    toast.success('Welcome 🤩')
+    Swal.fire({
+        title: 'WELCOME',
+        width: 300,
+        showConfirmButton: false,
+        timer: 1650,
+        color: '#000000',
+        backdrop: `
+          url("https://25.media.tumblr.com/tumblr_m55syiNKpx1qihaizo1_500.gif")
+          left top
+          no-repeat
+        `
+      })
 
     // Loguear al usuario
         login(data);

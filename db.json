@@ -31,7 +31,7 @@
       "lastname": "Deblinger",
       "username": "biandeb",
       "password": "bB1*12345",
-      "isAdmin": false,
+      "isAdmin": true,
       "id": 1
     },
     {
@@ -49,11 +49,6 @@
       "password": "cC1*12345",
       "isAdmin": false,
       "id": 3
-    },
-    {
-      "username": "facu",
-      "password": "aA1*12345",
-      "id": 4
     }
   ]
 }
