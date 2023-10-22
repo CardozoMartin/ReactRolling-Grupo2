@@ -29,12 +29,14 @@ import LoginView from './components/Ejercicio 14/LoginView.jsx';
 import RegisterView from './components/Ejercicio 14/RegisterView.jsx';
 import AdminView from './components/Ejercicio 14/AdminView.jsx';
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.css';
 
 import Navbar from './common/Navbar';
 import Footer from './common/Footer';
+
 
 const queryClient = new QueryClient();
 
@@ -70,7 +72,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
     </main>
     <Footer />
-    <Toaster position='top-right' richColors/>
+    <Toaster position='top-rigth richColors'/>
     </BrowserRouter>
     </QueryClientProvider>
     </React.StrictMode>

@@ -26,3 +26,4 @@ export const isValidForm = (namePet, owner, phone, symptoms) => {
   }
   return true;
 };
+

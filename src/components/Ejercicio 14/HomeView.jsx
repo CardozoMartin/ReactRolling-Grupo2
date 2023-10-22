@@ -1,7 +1,5 @@
 import { useSession } from "../../stores/useSession";
 
-import AdminView from "./AdminView";
-
 import './Ejercicio14.css'
 
 // ---------------------------
