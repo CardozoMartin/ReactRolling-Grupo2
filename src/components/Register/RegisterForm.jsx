@@ -68,11 +68,18 @@ const {mutate: postUser} = useMutation({
             error={!!errors?.firstname}
             options={{
                 required: true,
-                minLength: 3,
-                maxLength: 25,
-            }}
-            />
-            </div>
+            minLength: {
+                value: 2,
+                message: 'This field has a minimum of 2 characters.',
+              },
+            maxLength: {
+                value: 20,
+                message: 'This field has a maximum of 20 characters.',
+              },
+        }}
+        required/>
+        <p className='text-danger'>{errors.firstname?.message}</p>
+        </div>
             <div className="col-12 col-md-6">
             <Input
             label='Lastname'
@@ -82,10 +89,17 @@ const {mutate: postUser} = useMutation({
             error={!!errors?.lastname}
             options={{
                 required: true,
-                minLength: 3,
-                maxLength: 25,
-            }}
-            />
+            minLength: {
+                value: 3,
+                message: 'This field has a minimum of 3 characters.',
+              },
+            maxLength: {
+                value: 35,
+                message: 'This field has a maximum of 35 characters.',
+              },
+        }}
+        required/>
+        <p className='text-danger'>{errors.lastname?.message}</p>
             </div>
             <div className="col-12 col-md-6">
             <Input
@@ -95,10 +109,17 @@ const {mutate: postUser} = useMutation({
             error={!!errors?.username}
             options={{
                 required: true,
-                minLength: 3,
-                maxLength: 25,
-            }}
-            />
+            minLength: {
+                value: 3,
+                message: 'This field has a minimum of 3 characters.',
+              },
+            maxLength: {
+                value: 25,
+                message: 'This field has a maximum of 25 characters.',
+              },
+        }}
+        required/>
+        <p className='text-danger'>{errors.username?.message}</p>
             </div>
             <div className="col-12 col-md-6">
             <Input
@@ -109,9 +130,13 @@ const {mutate: postUser} = useMutation({
             error={!!errors?.password}
             options={{
                 required: true,
-                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/
+                pattern: {
+                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/,
+                    message: 'The password must have at least one lowercase letter, one uppercase letter, one number, one special character, and at least 8 characters in total.',
+                },
             }}
-            />
+            required/>
+            <p className='text-danger'>{errors.password?.message}</p>
             </div>
             <div className="text-end">
             <button className="btn-sign-up mt-3" type="submit">Sign up</button>

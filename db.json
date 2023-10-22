@@ -49,6 +49,11 @@
       "password": "cC1*12345",
       "isAdmin": false,
       "id": 3
+    },
+    {
+      "username": "facu",
+      "password": "aA1*12345",
+      "id": 4
     }
   ]
 }
