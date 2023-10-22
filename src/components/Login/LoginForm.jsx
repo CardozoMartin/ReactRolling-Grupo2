@@ -8,7 +8,7 @@ import Input from "../Input/Input";
 
 import { useSession } from "../../stores/useSession";
 
-import { postUserFn } from "../../api/users";
+import { postLoginFn } from "../../api/auth";
 
 import Swal from "sweetalert2";
 
@@ -30,20 +30,20 @@ handleSubmit: onSubmitRHF,
 
 // Tanstack Query     
 const {mutate: postLogin} = useMutation({
-    mutationFn: postUserFn,
+    mutationFn: postLoginFn,
     onSuccess: (data) => {
     Swal.close();
-    toast.success('Welcome ✨')
+    toast.success('Welcome 🤩')
 
     // Loguear al usuario
-        login({...data, password: undefined});
+        login(data);
 
     // Navegar a inicio (ya logueado)
     navigate('/')
 },
-    onError: () => {
+    onError: (err) => {
         Swal.close();
-        toast.error('An error occurred while registering the user.');
+        toast.error(err.message);
     },
 })
 
