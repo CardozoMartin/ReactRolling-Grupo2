@@ -12,8 +12,7 @@ export const getNews = async () => {
     }
     const data = await response.json();
   
-  
-    return data.articles;
+    return data.article;
   };
 
 

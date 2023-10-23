@@ -10,11 +10,11 @@ const LoginView = () => {
         <div className='col-12 col-md-6 mb-2'>
         <LoginForm />
         </div>
-        <div className='col-12 col-md-6'>
+        <div className='col-12 col-md-6 text-center'>
           <img
-            src='https://i.ytimg.com/vi/eQHg4vl6bb8/maxresdefault.jpg'
+            src='https://i.postimg.cc/tgRz5YRm/la-cocinita-de-Eze.jpg'
             alt='La cocinita de Ezequielito'
-            className='w-100 rounded'
+            className='w-75 rounded'
           />
         </div>
       </article>
