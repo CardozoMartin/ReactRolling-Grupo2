@@ -36,6 +36,8 @@ import './index.css';
 
 import Navbar from './common/Navbar';
 import Footer from './common/Footer';
+// import SearchForm from './components/Ejercicio 11/SearchForm.jsx';
+import NewsView from './components/Ejercicio 11/NewsView.jsx';
 
 
 const queryClient = new QueryClient();
@@ -58,7 +60,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='/8' element={<FormExsEight/>}></Route>
     <Route exact path='/9' element={<AppointmentForm/>}></Route>
     <Route exact path='/10' element={<MovieForm/>}></Route>
-    {/* <Route exact path='/11' element={}></Route> */}
+    <Route exact path='/11' element={<NewsView />}></Route>
     {/* <Route exact path='/12' element={}></Route> */}
     {/* <Route exact path='/13' element={}></Route> */}
     <Route exact path='*' element={<Error404/>}></Route>
@@ -72,7 +74,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Routes>
     </main>
     <Footer />
-    <Toaster position='top-rigth richColors'/>
+    <Toaster position='top-right' richColors/>
     </BrowserRouter>
     </QueryClientProvider>
     </React.StrictMode>

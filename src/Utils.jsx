@@ -27,3 +27,17 @@ export const isValidForm = (namePet, owner, phone, symptoms) => {
   return true;
 };
 
+export const fetchNews = async () => {
+  const apiKey = 'fd9d20daf1584f91986695cf3838612a';
+  const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+  
+  const response = await fetch(apiUrl);
+
+  if(!response.ok){
+  throw new Error ('An error occurred while bringing the news.');
+  }
+  const data = await response.json();
+
+
+  return data.articles;
+};
