@@ -16,8 +16,6 @@ const SearchForm = () =>{
             id='input-search'
             placeholder="Type to search..."
             className="form-control"
-            // value={task}
-            // onChange={handleChangeTask}
           />
         </div>
       </fieldset>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NewsCard = (props) => {
     const { article } = props;
   
@@ -17,14 +19,14 @@ const NewsCard = (props) => {
             <p>{article.content}</p>
           </div>
           <footer className='card-footer'>
-            <a
-              href={article.url}
+            <Link
+              to={article.url}
               className='btn btn-primary w-100'
               target='_blank'
               rel='noreferrer'
             >
               Visit website
-            </a>
+            </Link>
           </footer>
         </div>
       </article>
