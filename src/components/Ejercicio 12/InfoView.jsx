@@ -1,18 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 
-import SearchForm from "./SearchForm";
+import { getInfo } from "./info";
 
-import { getNews } from "./news";
+import InfoForm from "./InfoForm";
 
-
-const NewsView = (props) => {
-
+const InfoView = (props) => {
     const { article } = props;
 
     const { 
         isLoading, 
         isError ,
-      } = useQuery({ queryKey: ['news'], queryFn: getNews });
+      } = useQuery({ queryKey: ['info'], queryFn: getInfo });
     
       if (isLoading) {
         return <div className="text-light text-center">Loading...</div>;
@@ -21,7 +19,7 @@ const NewsView = (props) => {
       if (isError){
         return (
           <>
-          <h1 className="text-center text-light mt-4">News</h1>
+          <h1 className="text-center text-light mt-4">Rolling News 📰</h1>
           <hr className="w-50 container" />
           <div className="alert alert-danger w-50 container mt-3">
             Error fetching data</div>
@@ -31,10 +29,10 @@ const NewsView = (props) => {
     
       return (
         <>
-        <h1 className="text-center text-light mt-4">News</h1>
+        <h1 className="text-center text-light mt-4">Rolling News 📰</h1>
         <hr className="w-50 container" />
-        <SearchForm article={article} />
+        <InfoForm article={article} />
       </>
       )
 }
-export default NewsView;
+export default InfoView;

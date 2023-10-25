@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const NewsCard = (props) => {
-    const { article } = props;
+  const { article } = props;
 
   console.log(article)
     return (
