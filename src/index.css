@@ -209,19 +209,36 @@ body{
   color: #000000;
 }
 
-.section-news{
-  width: 30vw;
-  background-color: #cc906d;
-}
-
 .form-news{
   width: 35vw;
+  border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .input-search{
   border-radius: 1rem;
+  padding-right: 3%;
 }
 
+.btn-full-news{
+  background-color: #57496e;
+  text-decoration: none;
+  color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 6px;
+  
+  &:hover{
+    background-color: #57496e;
+    color: #000000;
+  }
+
+  @media (max-width: 768px) {
+    width: 30%;
+  }
+}
 .btn-search{
   background-color: #d145a2;
   color: #f9f9f9;

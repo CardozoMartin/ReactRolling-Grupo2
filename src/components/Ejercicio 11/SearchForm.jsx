@@ -28,12 +28,13 @@ const SearchForm = (props) =>{
 
   return (
     <>
-    <form className='card container p-4 form-news text-center mb-4' onSubmit={handleSubmit}>
+    <form className='container p-4 form-news mb-4 bg-light' onSubmit={handleSubmit}>
+      <p className="alert alert-danger text-center">It only brings news but does not search for a specific one.</p>
       <fieldset className='d-flex ms-2'>
         <label htmlFor='input-search' className="d-flex justify-content align-items-center ms-5">
           Search your news:
         </label>
-        <div className='ms-4 input-search'>
+        <div className='ms-3 input-search'>
           <input
             type='text'
             id='input-search'

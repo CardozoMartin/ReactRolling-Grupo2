@@ -5,8 +5,8 @@ const NewsCard = (props) => {
 
   console.log(article)
     return (
-      <article className='col-12 col-md-4 p-0 mb-2'>
-        <div className='card m-1 h-100'>
+      <article className='col-12 col-md-4 p-0 mb-4'>
+        <div className='card ms-4 h-100'>
           <header className='card-header'>
             <p className='text-secondary mt-2 mb-0'>{article.name}</p>
             <h2>{article.title}</h2>
@@ -14,10 +14,10 @@ const NewsCard = (props) => {
           <div className='card-body'>
             <p>{article.description}</p>
           </div>
-          <footer className='card-footer'>
+          <footer className='card-footer text-center'>
             <Link
               to={article.url}
-              className='btn btn-secondary w-100'
+              className='btn-full-news w-100'
               target='_blank'
               rel='noreferrer'
             >
