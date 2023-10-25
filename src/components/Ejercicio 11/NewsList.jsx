@@ -7,14 +7,17 @@ import { getNews } from "./news";
 
   const NewsList = () => {
     
-  const {data: news,} = useQuery({queryKey: ['news'], queryFn: getNews});
+  const {data} = useQuery({queryKey: ['news'], queryFn: getNews});
 
+  const news = data.sources
 
   return (
-    <section className='mt-3 row w-100'>
+    <section className="container">
+    <div className='row mt-3 w-100'>
     {news.map((article, index) => (
       <NewsCard key={index} article={article} />
     ))}
+  </div>
   </section>
   )
 }

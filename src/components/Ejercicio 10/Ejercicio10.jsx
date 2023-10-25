@@ -140,11 +140,11 @@ const MovieForm = () => {
               <button type='submit' className='mt-3 mb-3 btn-load'>Load</button></div>
         </form>
         <hr />
-        <section className="container w-50 mb-5">
+        <section className="container mb-5">
         <article className="row">
           {movie.length === 0 && <p className='text-center card p-3'>There are no movies uploaded yet.</p>}
           {movie.map((movie) => (
-            <div className="col-6" key={movie.id}>
+            <div className="col-12 col-md-6" key={movie.id}>
               <div className="card mb-3">
                 <div className="card-body">
                   <h5 className="card-title text-center mb-3">Movie 📽</h5>

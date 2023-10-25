@@ -99,13 +99,12 @@ body{
   justify-content: center;
   align-items: center;
   height: 15vh;
-  width: 30vw;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .avatar{
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
   background-color: rgb(120, 120, 230);
 }
@@ -119,8 +118,12 @@ body{
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 40vw;
+  width: 50vw;
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 }
 
 .btn-schedule{
@@ -174,6 +177,10 @@ body{
   justify-content: center;
   width: 40vw;
   margin-top: 100px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .btn-load{
@@ -208,7 +215,7 @@ body{
 }
 
 .form-news{
-  width: 30vw;
+  width: 35vw;
 }
 
 .input-search{

@@ -1,23 +1,25 @@
-const NEWS_URL = import.meta.env.VITE_NEWS_URL;
+// const NEWS_URL = import.meta.env.VITE_NEWS_URL;
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+// const API_KEY = import.meta.env.VITE_API_KEY;
 
 
 export const getNews = async () => {
     
-    const response = await fetch(`${NEWS_URL}${API_KEY}`);
-  
+    const response = await fetch(`https://newsapi.org/v2/top-headlines/sources?apiKey=fd9d20daf1584f91986695cf3838612a`);
+
+    
     if(!response.ok){
-    throw new Error ('An error occurred while bringing the news.');
+      throw new Error ('An error occurred while bringing the news.');
     }
     const data = await response.json();
-  
-    return data.article;
+    
+    console.log(data)
+    return data;
   };
 
 
   export const postNewFn = async (data) => {
-    const res = await fetch(`${NEWS_URL}${API_KEY}`, {
+    const res = await fetch(`https://newsapi.org/v2/top-headlines/sources?apiKey=fd9d20daf1584f91986695cf3838612a`, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -32,7 +34,7 @@ export const getNews = async () => {
 
 
   export const deleteNewFn = async (articleId) => {
-    const res = await fetch(`${NEWS_URL}${API_KEY}/${articleId}`, {
+    const res = await fetch(`https://newsapi.org/v2/top-headlines/sources?apiKey=fd9d20daf1584f91986695cf3838612a/${articleId}`, {
       method: 'DELETE',
     });
 

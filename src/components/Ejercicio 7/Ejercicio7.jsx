@@ -81,9 +81,11 @@ let employees = [
   
   const App7 = () => {
     return (
-    <ul className='list-group container mt-5 mb-5'>{employees.map((employee) => (
+    <section className="container">
+    <ul className='list-group mt-5 mb-5'>{employees.map((employee) => (
     <EmployeeCard key={employee.id} employee={employee} />
     ))}</ul>
+    </section>
     );
   };
 

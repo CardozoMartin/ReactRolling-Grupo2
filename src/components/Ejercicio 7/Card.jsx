@@ -5,7 +5,9 @@ const EmployeeCard = (props) => {
   const randomAvatarUrl = generateRandomAvatar();
   
   return (
-  <li className='list-group-item container list-employees'>
+  <section className="row">
+  <div className="col-12 col-md-6">
+  <li className='list-group-item list-employees'>
     <img
     alt={employee.fullName}
     src={randomAvatarUrl}
@@ -20,6 +22,8 @@ const EmployeeCard = (props) => {
           </div>
           </article>
           </li>
+          </div>
+          </section>
     );
   };
 
