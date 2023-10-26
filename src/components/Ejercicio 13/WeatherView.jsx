@@ -1,20 +1,19 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
-import { getWeather } from "./weather";
+import { getWeatherFn } from "./weather";
 
 import WeatherForm from "./WeatherForm";
+import WeatherCard from "./WeatherCard";
 
-import { getInfo } from "../Ejercicio 12/info";
 
-const WeatherView = (props) => {
-    const { article } = props;
+const WeatherView = () => {
+    const {
+    mutate: getWeather, 
+    } = useMutation({mutationFn: getWeatherFn})
 
-    const { isLoading, isError } = useQuery({ queryKey: ['weather'], queryFn: getInfo});
+    const { data: weatherData, isLoading, isError } = useQuery({ queryKey: ['weather'], location, queryFn: getWeather});
 
-    // const { 
-    //     isLoading, 
-    //     isError ,
-    //   } = useQuery({ queryKey: ['weather'], queryFn: getWeather });
+
     
       if (isLoading) {
         return (
@@ -30,7 +29,7 @@ const WeatherView = (props) => {
           <h1 className="text-center text-light mt-4">🌞 Rolling Weather ❄</h1>
           <hr className="w-50 container" />
           <div className="alert alert-danger w-50 container mt-3">
-            Error fetching data</div>
+            Error fetching data.</div>
           </>
         )
       }
@@ -39,8 +38,9 @@ const WeatherView = (props) => {
         <>
         <h1 className="text-center text-light mt-4">🌞 Rolling Weather ❄</h1>
         <hr className="w-50 container" />
-        <WeatherForm article={article} />
+        <WeatherForm getWeather={getWeather}/>
+        {weatherData && <WeatherCard weatherData={weatherData}/>}
       </>
-      )
-}
+      );
+};
 export default WeatherView;

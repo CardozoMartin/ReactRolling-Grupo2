@@ -1,13 +1,10 @@
 import WeatherList from "./WeatherList";
 
-import { useQuery } from "@tanstack/react-query";
-
 import { useState } from "react";
 
 const WeatherForm = (props) => {
-    const { data } = useQuery({ queryKey: ['weather'], location, country, queryFn: getInfo});
 
-   const { getInfo } = props;
+   const { getWeatherFn } = props;
 
     const [searchValue, setSearchValue] = useState('');
     // const [isInvalid, setIsInvalid] = useState(false);
@@ -26,7 +23,7 @@ const WeatherForm = (props) => {
     //     setIsInvalid(false);
     //   }
   
-      getInfo(searchValue);
+      getWeatherFn(searchValue);
     };
   
     return (

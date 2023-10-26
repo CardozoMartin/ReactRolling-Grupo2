@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { Toaster } from 'sonner';
 
+
+// Exercises
 import App1 from './components/Ejercicio 1/Ejercicio1.jsx';
 import App2 from './components/Ejercicio 2/Ejercicio2.jsx';
 import NewMessage from './components/Ejercicio 3/Ejercicio3.jsx';
@@ -20,11 +22,11 @@ import AppointmentForm from './components/Ejercicio 9/AppointmentForm';
 import MovieForm from './components/Ejercicio 10/Ejercicio10';
 import NewsView from './components/Ejercicio 11/NewsView.jsx';
 import InfoView from './components/Ejercicio 12/InfoView.jsx';
-// import ClimaApp from './components/Ejercicio 13/Ejercicio13';
+import WeatherView from './components/Ejercicio 13/WeatherView.jsx';
 import Error404 from './common/Error404.jsx';
 
 
-// Exercise 14 - (Finalizado en otro repositorio)
+// Exercise 14 - (in another repository)
 import HomeView from './components/Ejercicio 14/HomeView.jsx';
 import DetailView from './components/Ejercicio 14/DetailView.jsx';
 import LoginView from './components/Ejercicio 14/LoginView.jsx';
@@ -62,7 +64,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route exact path='/10' element={<MovieForm/>}></Route>
     <Route exact path='/11' element={<NewsView />}></Route>
     <Route exact path='/12' element={<InfoView />}></Route>
-    {/* <Route exact path='/13' element={}></Route> */}
+    <Route exact path='/13' element={<WeatherView />}></Route>
     <Route exact path='*' element={<Error404/>}></Route>
 
     {/* Exercise 14 */}
