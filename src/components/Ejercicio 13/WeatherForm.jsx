@@ -1,6 +1,6 @@
 import WeatherList from "./WeatherList";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const WeatherForm = (props) => {
 
@@ -8,6 +8,10 @@ const WeatherForm = (props) => {
 
     const [searchValue, setSearchValue] = useState('');
     // const [isInvalid, setIsInvalid] = useState(false);
+
+    useEffect(()=>{
+      getWeatherFn.then((newsArray)=>{setSearchValue(newsArray)});
+    },[]);
   
     const handleChange = (e) => {
       setSearchValue(e.target.value);
@@ -38,7 +42,7 @@ const WeatherForm = (props) => {
                 type='text'
                 id='input-search'
                 placeholder="Type to search..."
-                // className={`form-control ${isInvalid ? 'is-invalid' : ''}`}
+                className='form-control'
                 value={searchValue}
                 onChange={handleChange}
               //   disabled={isLoading}
@@ -57,3 +61,5 @@ const WeatherForm = (props) => {
       )
 }
 export default WeatherForm;
+
+// ${isInvalid ? 'is-invalid' : ''}`

@@ -1,10 +1,14 @@
 
+import { useQuery } from "@tanstack/react-query";
+
+import { getWeatherFn } from "./weather";
+
 import WeatherCard from "./WeatherCard";
 
 
+const WeatherList = () => {
 
-const WeatherList = (props) => {
-    const {data} = props;
+  const { data } = useQuery({ queryKey: ['weather'], location, queryFn: getWeatherFn});
 
     const news = data.sources
   
