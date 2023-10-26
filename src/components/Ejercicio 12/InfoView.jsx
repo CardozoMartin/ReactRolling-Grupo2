@@ -7,6 +7,8 @@ import InfoForm from "./InfoForm";
 const InfoView = (props) => {
     const { article } = props;
 
+    // const { data: newsData, isLoading, isError, error } = useQuery(['info', selectedCountry, selectedCategory]
+
     const { 
         isLoading, 
         isError ,
@@ -36,3 +38,5 @@ const InfoView = (props) => {
       )
 }
 export default InfoView;
+
+

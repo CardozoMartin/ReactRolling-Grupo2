@@ -1,3 +1,31 @@
+// import { useQuery } from "@tanstack/react-query";
+
+// export const getInfo = async () => {
+//       const response = await fetch(`https://newsdata.io/api/1/news?country=${selectedCountry}&category=${selectedCategory}`, {
+//         headers: {
+//           'Authorization': 'Bearer pub_3143146ebee9fb25425be88240281bf6f847a',
+//         },
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error('Error fetching data. NO FUNCIONA');
+//       }
+  
+//       return response.json();
+      
+//       if (isLoading) {
+//           <div>Loading...</div>;
+//         }
+        
+//         if (isError) {
+//             <div>Error: {error.message}</div>;
+//         }
+//     }
+        
+
+
+
+
 export const getInfo = async () => {
     
     const response = await fetch(`https://newsdata.io/api/1/news?apikey=pub_3143146ebee9fb25425be88240281bf6f847a`);

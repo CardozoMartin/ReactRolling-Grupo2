@@ -4,16 +4,24 @@ import { getWeather } from "./weather";
 
 import WeatherForm from "./WeatherForm";
 
+import { getInfo } from "../Ejercicio 12/info";
+
 const WeatherView = (props) => {
     const { article } = props;
 
-    const { 
-        isLoading, 
-        isError ,
-      } = useQuery({ queryKey: ['weather'], queryFn: getWeather });
+    const { isLoading, isError } = useQuery({ queryKey: ['weather'], queryFn: getInfo});
+
+    // const { 
+    //     isLoading, 
+    //     isError ,
+    //   } = useQuery({ queryKey: ['weather'], queryFn: getWeather });
     
       if (isLoading) {
-        return <div className="text-light text-center">Loading...</div>;
+        return (
+            <>
+            <div className="text-light text-center">Loading...</div>
+            </>
+            );
       }
 
       if (isError){

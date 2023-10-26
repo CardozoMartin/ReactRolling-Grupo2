@@ -1,17 +1,23 @@
-// import WeatherList from "./WeatherList";
+import WeatherList from "./WeatherList";
 
-const WeatherForm = () => {
-   // const { fetchNews, isLoading} = props;
+import { useQuery } from "@tanstack/react-query";
 
-    // const [searchValue, setSearchValue] = useState('');
+import { useState } from "react";
+
+const WeatherForm = (props) => {
+    const { data } = useQuery({ queryKey: ['weather'], location, country, queryFn: getInfo});
+
+   const { getInfo } = props;
+
+    const [searchValue, setSearchValue] = useState('');
     // const [isInvalid, setIsInvalid] = useState(false);
   
-    // const handleChange = (e) => {
-    //   setSearchValue(e.target.value);
-    // };
+    const handleChange = (e) => {
+      setSearchValue(e.target.value);
+    };
   
-    // const handleSubmit = (e) => {
-    //   e.preventDefault();
+    const handleSubmit = (e) => {
+      e.preventDefault();
   
     //   if (searchValue.trim().length === 0) {
     //     setIsInvalid(true);
@@ -20,24 +26,24 @@ const WeatherForm = () => {
     //     setIsInvalid(false);
     //   }
   
-    //   fetchNews(searchValue);
-    // };
+      getInfo(searchValue);
+    };
   
     return (
         <>
-        <form className='container p-4 form-news mb-4 bg-light'>
+        <form className='container p-4 form-news mb-4 bg-light' onChange={handleSubmit}>
           <fieldset className='d-flex ms-2'>
             <label htmlFor='input-search' className="d-flex justify-content align-items-center ms-5">
-              Search:
+              Search your country:
             </label>
             <div className='ms-3 input-search'>
               <input
                 type='text'
                 id='input-search'
                 placeholder="Type to search..."
-              //   className={`form-control ${isInvalid ? 'is-invalid' : ''}`}
-              //   value={searchValue}
-              //   onChange={handleChange}
+                // className={`form-control ${isInvalid ? 'is-invalid' : ''}`}
+                value={searchValue}
+                onChange={handleChange}
               //   disabled={isLoading}
               />
             </div>
@@ -49,7 +55,7 @@ const WeatherForm = () => {
           </div>
         </form>
         <hr />
-        {/* <WeatherList/> */}
+        <WeatherList/>
         </>
       )
 }
