@@ -3,12 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import { getInfo } from "./info";
 
 import InfoForm from "./InfoForm";
+import InfoList from "./InfoList";
 
-const InfoView = (props) => {
-    const { article } = props;
-
-    // const { data: newsData, isLoading, isError, error } = useQuery(['info', selectedCountry, selectedCategory]
-
+const InfoView = () => {
     const { 
         isLoading, 
         isError ,
@@ -33,7 +30,8 @@ const InfoView = (props) => {
         <>
         <h1 className="text-center text-light mt-4">Rolling News 📰</h1>
         <hr className="w-50 container" />
-        <InfoForm article={article} />
+        <InfoForm />
+        <InfoList />
       </>
       )
 }

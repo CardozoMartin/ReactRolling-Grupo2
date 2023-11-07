@@ -1,17 +1,19 @@
+import { useState } from "react";
+
 import WeatherList from "./WeatherList";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const WeatherForm = (props) => {
 
-   const { getWeatherFn } = props;
+   const { getWeatherFn, country, location } = props;
 
     const [searchValue, setSearchValue] = useState('');
     // const [isInvalid, setIsInvalid] = useState(false);
 
-    useEffect(()=>{
-      getWeatherFn.then((newsArray)=>{setSearchValue(newsArray)});
-    },[]);
+    // useEffect(()=>{
+    //   getWeatherFn.then((newsArray)=>{setSearchValue(newsArray)});
+    // },[]);
   
     const handleChange = (e) => {
       setSearchValue(e.target.value);
@@ -27,7 +29,8 @@ const WeatherForm = (props) => {
     //     setIsInvalid(false);
     //   }
   
-      getWeatherFn(searchValue);
+      getWeatherFn(location, country);
+      // pasarle los 2 parametros, ver por que me llega en objeto
     };
   
     return (

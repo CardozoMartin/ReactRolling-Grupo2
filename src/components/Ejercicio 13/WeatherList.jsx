@@ -8,7 +8,7 @@ import WeatherCard from "./WeatherCard";
 
 const WeatherList = () => {
 
-  const { data } = useQuery({ queryKey: ['weather'], location, queryFn: getWeatherFn});
+  const { data } = useQuery({ queryKey: ['weather'], queryFn: getWeatherFn});
 
     const news = data.sources
   
